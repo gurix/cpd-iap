@@ -1,0 +1,35 @@
+h1.hidden = title "Sitzungen von #{@client.name} (#{@client.identifier}) bei #{@therapist.name}"
+
+= content_for :header_right do
+  = link_to t('.other_clients'), therapist_path(@therapist.token), class: 'hidden-print'
+
+javascript:
+  options = {
+    high: 100,
+    low: 0,
+    showArea: true,
+    fullWidth: true,
+    chartPadding: {
+      right: 40
+    },
+    axisY: {
+      onlyInteger: true
+    }
+  }
+
+#profile
+  - @sessions_by_type.each do |klass, sessions|
+    h2 = t(".survey.#{klass.demodulize.underscore}")
+    = render klass.demodulize.underscore, sessions: sessions
+
+javascript:
+  function chart_headstand() {
+    $('.headstand').css('width', $('.ct-chart').height());
+  }
+
+  $( window ).resize(function() {
+    chart_headstand();
+  });
+
+  chart_headstand();
+   

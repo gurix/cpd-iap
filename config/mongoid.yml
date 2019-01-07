@@ -1,0 +1,23 @@
+development:
+  clients:
+    default:
+      database: cpd_iap_development
+      hosts:
+        - localhost:27017
+test:
+  clients:
+    default:
+      database: cpd_iap_test
+      hosts:
+        - localhost:27017
+
+staging:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>

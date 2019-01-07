@@ -1,0 +1,117 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+
+@import "variables";
+@import "bootstrap";
+@import "bootstrap-slider/bootstrap-slider";
+@import "font-awesome";
+@import 'chartist.min';
+@import 'profile';
+@import 'range_slider';
+@import 'survey';
+
+body {
+  background-color: #fff;
+  padding-bottom: 50px;
+}
+
+header {
+  background-color: $brand-info;
+  margin-bottom: 20px;
+  .title h1, {
+    font-size: 24pt;
+    color: #16405B;
+    margin: 14px 0;
+  }
+}
+
+.form-group {
+  .slider.slider-horizontal {
+    width:95%;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+.tab-content {
+  padding: 15px;
+  border-width: 0px 1px 1px 1px;
+  border-color: $navbar-default-toggle-border-color;
+  border-style: solid;
+  
+  .pull-right {
+    margin-right: 15px;
+  }
+}
+
+label {
+  display: block;
+}
+
+.table td.fit{
+    white-space: nowrap;
+    width: 1%;
+}
+
+a.access_for_therapists {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 5px;
+  font-size: 0.8em;
+  z-index: 12;
+  padding: 12px;
+}
+.header_right {
+  min-height: 69px;
+  text-align: right;
+
+  a {
+    display: block;
+    padding-top: 16px;
+    color: #16405B;
+  }
+
+  a.link-danger {
+    color: darkred;  
+  }
+}
+
+.control-label small {
+  color: #666666;
+}
+
+caption {
+  color: #666666;
+}
+
+footer {
+    text-align: center;
+    background: $brand-danger;
+    padding: 12px;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #550000;
+}
+
+.alert.danger{
+  @extend .alert-danger;
+}
+  
+.alert.notice {
+    @extend .alert-info;
+}
+
+.alert-danger {
+  color: #A90000;
+}
+
+.nav-link {
+  font-weight: bold;
+  
+  i.fa {
+    margin: 0 10px;
+  }
+}

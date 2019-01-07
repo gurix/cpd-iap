@@ -1,0 +1,36 @@
+#profile {
+  .ct-series-a {
+    line.ct-point, path.ct-line { 
+      stroke: $brand-primary;
+    }
+    
+    path.ct-area {
+      fill: lighten($brand-primary, 10%)
+    }
+  }
+
+  .ct-series-b {
+    line.ct-point, path.ct-area {
+      display: none;
+    }
+    path.ct-line { 
+      stroke: $brand-warning;
+      stroke-width: 1;
+    }
+  } 
+  .ct-label {
+    font-size: 1rem;
+  }
+
+  .headstand {
+    transform: rotate(-90deg);
+    transform-origin: left bottom 0;
+    font-size: 1.5vw;
+    margin: 5px;
+    position: absolute;
+    bottom: 0px;
+    // border-top: 1px solid red;
+    // border-bottom: 1px solid green;
+    text-align: center;
+  }
+}

@@ -1,0 +1,79 @@
+div aria-hidden="true"
+  .row
+    .col-xs-12
+      #srs_relationship.ct-chart.ct-double-octave 
+      .headstand = t('.dimensions.relationship')
+  .row    
+    .col-xs-12
+      #srs_goals_and_topics.ct-chart.ct-double-octave 
+      .headstand = t('.dimensions.goals_and_topics')
+  .row
+    .col-xs-12
+      #srs_approach_or_method.ct-chart.ct-double-octave 
+      .headstand = t('.dimensions.approach_or_method')
+  .row
+    .col-xs-12
+      #srs_coping.ct-chart.ct-double-octave 
+      .headstand = t('.dimensions.coping')
+  .row
+    .col-xs-12
+      #srs_overall.ct-chart.ct-double-octave
+      .headstand = t('.dimensions.overall')
+
+javascript:
+  new Chartist.Line('#srs_relationship', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:relationship},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_goals_and_topics', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:goals_and_topics},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_approach_or_method', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:approach_or_method},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_overall', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:overall},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_coping', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:coping},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+table.table.table-responsive
+  caption = t('.caption', name: @client.name)
+  tr
+    th width="5%" 
+      .sr-only= t('clients.show.count')
+    th width="30%" = t('clients.show.date')
+    th = t('clients.show.comment')
+    - t('.dimensions').values.each do |value|
+      th= value
+  - sessions.each_with_index do |session, index| 
+    tr
+      td = index + 1
+      td = l(session.created_at)
+      td = session.comment
+      - t('.dimensions').keys.each do |key|
+        td= session[key]

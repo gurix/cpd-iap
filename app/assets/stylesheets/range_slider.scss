@@ -1,0 +1,91 @@
+ .range {
+  .form-control {
+    border: none;
+    box-shadow: none;
+  }
+} 
+
+/* IE 11 Definitions */
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: $brand-info;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: $brand-info;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: $brand-info;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+}
+input[type='range']::-ms-tooltip {
+  display: none;
+}
+/* Webkit based Browswers */
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: $brand-info;
+    margin-top: -11px;
+    margin-bottom: -11px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+/* Firefox */
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: $brand-info;
+}

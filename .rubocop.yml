@@ -1,0 +1,23 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - bin/**
+    - spec/spec_helper.rb
+Documentation:
+  Enabled: false
+LineLength:
+  Enabled: true
+  Max: 160
+AbcSize:
+  Enabled: false
+FrozenStringLiteralComment:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - context
+    - scenario
+    - it
+    - feature

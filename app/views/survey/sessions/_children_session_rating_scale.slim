@@ -1,0 +1,84 @@
+- title t('.title')
+.sr-only = t('.slider_infos')
+h2.sr-only = t('.dimensions.relationship')
+.row
+  .col-xs-4
+      = t('.relationship.negative')
+  .col-xs-4
+  .col-xs-4.text-right
+      = t('.relationship.positive')
+.row
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('frown.svg')
+  .col-xs-10
+    = f.input :relationship, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.relationship') }
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('smile.svg')
+
+h2.sr-only = t('.dimensions.goals_and_topics')
+.row
+  .col-xs-4
+    = t('.goals_and_topics.negative')
+  .col-xs-4
+  .col-xs-4.text-right
+    = t('.goals_and_topics.positive')
+.row
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('frown.svg')
+  .col-xs-10
+    = f.input :goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.goals_and_topics') }
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('smile.svg')
+
+h2.sr-only = t('.dimensions.approach_or_method')
+.row
+  .col-xs-4
+    = t('.approach_or_method.negative')
+  .col-xs-4
+  .col-xs-4.text-right
+    = t('.approach_or_method.positive')
+.row
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('frown.svg')
+  .col-xs-10
+    = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.approach_or_method') }
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('smile.svg')
+
+h2.sr-only = t('.dimensions.overall')
+.row
+  .col-xs-4
+      = t('.overall.negative')
+  .col-xs-4
+  .col-xs-4.text-right
+      = t('.overall.positive')
+.row
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('frown.svg')
+  .col-xs-10
+    = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.overall') }
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('smile.svg')
+
+h2.sr-only = t('.dimensions.coping')
+.row
+  .col-xs-4
+      = t('.coping.negative')
+  .col-xs-4
+  .col-xs-4.text-right
+      = t('.coping.positive')
+.row
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('frown.svg')
+  .col-xs-10
+    = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.coping') }
+  .col-xs-1.emoticon.text-center aria-hidden="true"
+    = image_tag('smile.svg')
+
+.row
+  .col-xs-12
+    = f.input :comment, as: :text, label: t('.comment')
+
+  .form-group
+    br
+    = f.submit t('.save'), class: 'btn btn-primary btn-block'

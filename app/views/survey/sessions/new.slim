@@ -1,0 +1,8 @@
+= content_for :header_right do
+  = link_to [:edit,@client] do 
+    = t('.therapist', name: @client.therapist.try(:name) || t('shared.unknown')) 
+main role="main"
+  = simple_form_for([@client, @session]) do |f|
+    = render @session.class.name.demodulize.underscore, f: f
+
+  = link_to t('shared.cancel'), root_path, data: {confirm: t('.ask_for_cancelation')}

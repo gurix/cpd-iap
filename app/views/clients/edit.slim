@@ -1,0 +1,17 @@
+h1.hidden = title t('.title')
+.row
+  .col-xs-12.col-md-6.col-md-offset-3
+    = simple_form_for(@client) do |f| 
+      = f.association :therapist, collection: @therapists, include_blank: false, label_method: "name", label: t('.please_choose_a_therapist')
+      = f.input :class_of_age, as: :radio_buttons, collection: t('clients.class_of_age').map{ |x| [x.first, raw(x.last)]}, label_method: :last, value_method: :first
+      = f.submit t('shared.next'), class: 'btn btn-primary btn-block'
+br
+.row
+  .col-xs-12.col-md-6.col-md-offset-3
+    .alert.alert-info
+      | #{t('.info_title')}  
+      b #{@client.identifier}.  
+      | #{t('.info_body')}  
+      = link_to t('.info_exit'), root_path
+      
+    

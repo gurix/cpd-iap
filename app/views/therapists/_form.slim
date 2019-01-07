@@ -1,0 +1,6 @@
+= simple_form_for(@therapist) do |f|
+  = f.input :name
+  = f.input :email, as: :email
+  = f.submit t('shared.save'), class: 'btn btn-primary'
+  .btn
+    = link_to t('shared.cancel'), therapists_path

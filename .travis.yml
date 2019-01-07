@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 2.5.3
+
+env:
+  - FROM_EMAIL=test@somedomain.tld
+
+services:
+  - mongodb
+
+cache: bundler
+sudo: false
