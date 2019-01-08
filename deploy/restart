@@ -1,3 +1,4 @@
 #!/bin/sh
-passenger-config restart-app . --ignore-app-not-running
-echo "restarting Passenger app"
+echo "Reloading Apache ...🏃🏻‍"
+sudo nine-manage-vhosts webserver reload
+echo "... done!"
