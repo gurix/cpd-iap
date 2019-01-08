@@ -16,11 +16,11 @@ body {
 }
 
 header {
-  background-color: $brand-info;
+  background-color: $brand-primary;
   margin-bottom: 20px;
   .title h1, {
     font-size: 24pt;
-    color: #16405B;
+    color: #FFF;
     margin: 14px 0;
   }
 }
@@ -38,7 +38,7 @@ header {
   border-width: 0px 1px 1px 1px;
   border-color: $navbar-default-toggle-border-color;
   border-style: solid;
-  
+
   .pull-right {
     margin-right: 15px;
   }
@@ -69,11 +69,11 @@ a.access_for_counselors {
   a {
     display: block;
     padding-top: 16px;
-    color: #16405B;
+    color: #FFF;
   }
 
   a.link-danger {
-    color: darkred;  
+    color: darkred;
   }
 }
 
@@ -87,9 +87,9 @@ caption {
 
 footer {
     text-align: center;
-    background: $brand-danger;
+    background: #EEE;
     padding: 12px;
-    position: fixed; 
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -99,7 +99,7 @@ footer {
 .alert.danger{
   @extend .alert-danger;
 }
-  
+
 .alert.notice {
     @extend .alert-info;
 }
@@ -110,7 +110,7 @@ footer {
 
 .nav-link {
   font-weight: bold;
-  
+
   i.fa {
     margin: 0 10px;
   }

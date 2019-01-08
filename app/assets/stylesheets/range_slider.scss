@@ -3,7 +3,7 @@
     border: none;
     box-shadow: none;
   }
-} 
+}
 
 /* IE 11 Definitions */
 input[type=range]::-ms-track {
@@ -21,7 +21,7 @@ input[type=range]::-ms-track {
     color: transparent;
 }
 input[type=range]::-ms-fill-lower {
-    background: $brand-info;
+    background: $brand-primary;
     border-radius: 10px;
 }
 input[type=range]::-ms-fill-upper {
@@ -33,10 +33,10 @@ input[type=range]::-ms-thumb {
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    background: $brand-info;
+    background: $brand-primary;
 }
 input[type=range]:focus::-ms-fill-lower {
-    background: $brand-info;
+    background: $brand-primary;
 }
 input[type=range]:focus::-ms-fill-upper {
     background: #ccc;
@@ -63,7 +63,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    background: $brand-info;
+    background: $brand-primary;
     margin-top: -11px;
     margin-bottom: -11px;
 }
@@ -87,5 +87,5 @@ input[type=range]::-moz-range-thumb {
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    background: $brand-info;
+    background: $brand-primary;
 }
