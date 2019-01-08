@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     end
   end
 
-  # Area displaying each therapists performance
-  resources :reset_therapist_tokens, only: [:new, :create]
-  resources :therapists, except: :show
-  resources :therapists, only: :show, param: :token do
+  # Area displaying each counselors performance
+  resources :reset_counselor_tokens, only: [:new, :create]
+  resources :counselors, except: :show
+  resources :counselors, only: :show, param: :token do
     resources :clients, only: :show, param: :token
   end
 end

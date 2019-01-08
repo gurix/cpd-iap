@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Therapist.create(name: 'Markus Graf', email: 'markus.graf@zhaw.ch', token: 'alis')
-Therapist.create(name: 'Prof. Dr. Marcel Schär Gmelch', email: 'marcel.schaer@zhaw.ch', token: 'lsksk')
-Therapist.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie', token: 'osas')
+Counselor.create(name: 'Markus Graf', email: 'markus.graf@zhaw.ch', token: 'alis')
+Counselor.create(name: 'Prof. Dr. Marcel Schär Gmelch', email: 'marcel.schaer@zhaw.ch', token: 'lsksk')
+Counselor.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie', token: 'osas')

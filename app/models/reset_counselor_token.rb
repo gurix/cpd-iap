@@ -1,4 +1,4 @@
-class ResetTherapistToken
+class ResetCounselorToken
   include ActiveModel::Model
 
   attr_accessor :email
@@ -9,6 +9,6 @@ class ResetTherapistToken
   validate :email_exists
 
   def email_exists
-    errors.add(:email, I18n.t('reset_therapist_tokens.does_not_exist', email: email)) if Therapist.where(email: email).count.zero?
+    errors.add(:email, I18n.t('reset_counselor_tokens.does_not_exist', email: email)) if Counselor.where(email: email).count.zero?
   end
 end

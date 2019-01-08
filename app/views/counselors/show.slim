@@ -1,0 +1,17 @@
+h1.hidden = title @counselor.name
+
+= content_for :header_right do
+  = link_to t('.logout'), root_path
+
+table.table
+  caption= t('.clients',  name: @counselor.name)
+  tr
+    th= t('.name')
+    th= t('.identifier')
+    th= t('.statistics')
+  - @counselor.clients.each do |client|
+    tr
+      td = client.name
+      td = client.identifier
+      td
+        = link_to t('.amount_of_client_sessions', sessions: client.sessions.where(counselor: @counselor).size), counselor_client_path(@counselor.token, client.token)

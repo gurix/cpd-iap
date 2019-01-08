@@ -1,9 +1,9 @@
-b Hallo #{@therapist.name},
+b Hallo #{@counselor.name},
 p Ihre Zugriffsinformationen wurden zurükgesetzt.
 p Sie können neu unter folgender Adresse wieder auf Ihre Statistiken zugreiffen:
 
-= link_to therapist_url(@therapist.token), therapist_url(@therapist.token)
+= link_to counselor_url(@counselor.token), counselor_url(@counselor.token)
 p 
   i Aus Sicherheitsgründen verfällt dieser Link nach einer gewissen Zeit. Sie können sich aber jederzeit Ihren Zufgriff wiederherstellen unter:
   br
-  = link_to new_reset_therapist_token_url, new_reset_therapist_token_url
+  = link_to new_reset_counselor_token_url, new_reset_counselor_token_url

@@ -1,6 +1,6 @@
 = content_for :header_right do
   = link_to [:edit,@client] do 
-    = t('.therapist', name: @client.therapist.try(:name) || t('shared.unknown')) 
+    = t('.counselor', name: @client.counselor.try(:name) || t('shared.unknown')) 
 main role="main"
   = simple_form_for([@client, @session]) do |f|
     = render @session.class.name.demodulize.underscore, f: f

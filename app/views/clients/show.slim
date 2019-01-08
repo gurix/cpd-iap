@@ -1,7 +1,7 @@
-h1.hidden = title "Sitzungen von #{@client.name} (#{@client.identifier}) bei #{@therapist.name}"
+h1.hidden = title "Sitzungen von #{@client.name} (#{@client.identifier}) bei #{@counselor.name}"
 
 = content_for :header_right do
-  = link_to t('.other_clients'), therapist_path(@therapist.token), class: 'hidden-print'
+  = link_to t('.other_clients'), counselor_path(@counselor.token), class: 'hidden-print'
 
 javascript:
   options = {

@@ -21,11 +21,11 @@ class ApplicationController < ActionController::Base
   end
 
   def expire_tokens
-    Therapist.each do |therapist|
-      next if therapist.token_generated_at && therapist.token_generated_at >= TOKEN_TIMEOUT.ago
+    Counselor.each do |counselor|
+      next if counselor.token_generated_at && counselor.token_generated_at >= TOKEN_TIMEOUT.ago
 
-      therapist.reset_token
-      therapist.save
+      counselor.reset_token
+      counselor.save
     end
   end
 

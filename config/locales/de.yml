@@ -24,7 +24,7 @@ de:
     new_client_session:
       subject: "Neue Bewertung von %{identifier}"
 
-  reset_therapist_tokens:
+  reset_counselor_tokens:
     does_not_exist: Die E-Mail-Adresse %{email} ist keiner Beratungsperson zugeordnet.
     new:
       instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Beratungsperson hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
@@ -50,15 +50,15 @@ de:
       dimensions: *SRS_DIMENSIONS
     edit:
       title: Meine Einstellungen anpassen
-      please_choose_a_therapist: Bitte wählen Sie Ihre Beratungsperson
+      please_choose_a_counselor: Bitte wählen Sie Ihre Beratungsperson
       info_title: Diese Einstellungen betreffen die Klienten-Nummer
       info_body: Bitte überprüfen Sie die Klienten-Nummer nochmals, bevor Sie die Anpassungen durchführen.
       info_exit: Bei falscher Klienten-Nummer, melden Sie sich nochmals neu an.
     new:
       title: Sitzung bewerten
       identifier_hint: Die Klienten-Nummer wird Ihnen durch Ihre Beratungsperson bekannt gegeben.
-      access_for_therapists: Zugang für Beratende
-      please_choose_a_therapist: Bitte wählen Sie Ihre Beratungsperson aus.
+      access_for_counselors: Zugang für Beratende
+      please_choose_a_counselor: Bitte wählen Sie Ihre Beratungsperson aus.
       ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
     create:
@@ -81,7 +81,7 @@ de:
       child: Kind / Jugendliche
       adult: Erwachsene
 
-  therapists:
+  counselors:
     new:
       title: Beratungspersonerfassen
 
@@ -121,7 +121,7 @@ de:
   survey:
     sessions:
       new:
-        therapist: "Die heutige Sitzung wurde begleitet von %{name}"
+        counselor: "Die heutige Sitzung wurde begleitet von %{name}"
         ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
       session_rating_scale:
@@ -169,7 +169,7 @@ de:
 
   mongoid:
      attributes:
-        therapist:
+        counselor:
           email: E-Mail
         client:
           identifier: Bitte geben Sie Ihre Klienten-Nummer an.

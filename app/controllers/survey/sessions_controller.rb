@@ -3,17 +3,17 @@ module Survey
     before_action :set_type
 
     before_action :load_client
-    before_action :load_therapists # Loads the list with all available therapists
+    before_action :load_counselors # Loads the list with all available counselors
 
     def new
-      @session = type_class.new(therapist: @client.last_therapist)
+      @session = type_class.new(counselor: @client.last_counselor)
     end
 
     def create
       @session = type_class.new session_params
       @session.client = @client
 
-      @session.therapist = @client.therapist # Ensure we always state which therapist guided the session
+      @session.counselor = @client.counselor # Ensure we always state which counselor guided the session
 
       if @session.save
         render :create
@@ -41,13 +41,13 @@ module Survey
       @client = Client.find(params[:client_id])
     end
 
-    def load_therapists
-      @therapists = Therapist.asc(:name)
+    def load_counselors
+      @counselors = Counselor.asc(:name)
     end
 
     def session_params
       required_param = "survey_#{type.name.demodulize.underscore}"
-      params.require(required_param).permit(:therapist_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :comment)
+      params.require(required_param).permit(:counselor_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :comment)
     end
   end
 end

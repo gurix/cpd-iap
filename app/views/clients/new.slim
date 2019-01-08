@@ -4,7 +4,7 @@ main role="main"
       = simple_form_for(@client) do |f| 
         = f.input :identifier, hint: t('.identifier_hint'), input_html: { autocapitalize: 'none', autocomplete: 'off' } if @client.identifier.blank?
         - if @client.identifier.present?
-          = f.association :therapist, collection: @therapists, include_blank: '', label_method: "name", label: t('.please_choose_a_therapist')
+          = f.association :counselor, collection: @counselors, include_blank: '', label_method: "name", label: t('.please_choose_a_counselor')
           = f.input :name, input_html: { autocomplete: 'off' }, required: true 
           = f.input :class_of_age, as: :radio_buttons, collection: t('clients.class_of_age').map{ |x| [x.first, raw(x.last)]}, label_method: :last, value_method: :first
           = f.input :identifier, as: :hidden
@@ -15,4 +15,4 @@ main role="main"
           .form-group.text-center
             = link_to t('shared.cancel'), root_path, data: {confirm: t('.ask_for_cancelation')}
   - if @client.identifier.blank?
-    = link_to t('.access_for_therapists'), new_reset_therapist_token_path, class: 'access_for_therapists'
+    = link_to t('.access_for_counselors'), new_reset_counselor_token_path, class: 'access_for_counselors'

@@ -5,15 +5,15 @@ class ClientsController < ApplicationController
 
   before_action :http_basic_auth, :csv_header, only: :index
   before_action :find_or_initialize_client, only: :create
-  before_action :load_therapists # Loads the list with all available therapists
+  before_action :load_counselors # Loads the list with all available counselors
   before_action :load_client, only: %i[edit update]
 
   def index
     Client.each do |client|
       client.sessions.each do |session|
-        next if session.therapist.blank?
+        next if session.counselor.blank?
 
-        response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.therapist.name, session.therapist.email,
+        response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.counselor.name, session.counselor.email,
                                                  session.version, session.class.name, session.relationship, session.goals_and_topics,
                                                  session.approach_or_method, session.overall, session.comment])
       end
@@ -24,8 +24,8 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find_by(token: params[:token])
-    @therapist = Therapist.find_by(token: params[:therapist_token])
-    sessions = @client.sessions.where(therapist: @therapist).asc(:created_at)
+    @counselor = Counselor.find_by(token: params[:counselor_token])
+    sessions = @client.sessions.where(counselor: @counselor).asc(:created_at)
     @sessions_by_type =  sessions.group_by(&:_type)
   end
 
@@ -56,7 +56,7 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:identifier, :name, :class_of_age, :therapist_id, :second_step)
+    params.require(:client).permit(:identifier, :name, :class_of_age, :counselor_id, :second_step)
   end
 
   # Set the path depending on kind of survey used for last survey
@@ -64,8 +64,8 @@ class ClientsController < ApplicationController
     "/clients/#{@client.id}/#{@client.session_type_by_age.name.tableize}/new"
   end
 
-  def load_therapists
-    @therapists = Therapist.asc(:name)
+  def load_counselors
+    @counselors = Counselor.asc(:name)
   end
 
   def load_client
@@ -75,7 +75,7 @@ class ClientsController < ApplicationController
   def csv_header
     response.headers['Content-Disposition'] = 'attachment; filename="' + Time.now.strftime('%Y%m%d%H%M') + '.csv"'
     response.headers['Content-Type'] = 'text/csv'
-    response.stream.write CSV.generate_line(%w[identifier created_at updated_at therapist_name therapist_email version scale
+    response.stream.write CSV.generate_line(%w[identifier created_at updated_at counselor_name counselor_email version scale
                                                relationship goals_and_topics approach_or_method overall comment])
   end
 end

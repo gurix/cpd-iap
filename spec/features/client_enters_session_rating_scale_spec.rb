@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'session rating scale input' do
   scenario 'a new client fills a survey' do
-    Therapist.create(name: 'Sigmund Freud', email: 'sigmund@sigmund-freud.at')
-    Therapist.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie')
+    Counselor.create(name: 'Sigmund Freud', email: 'sigmund@sigmund-freud.at')
+    Counselor.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie')
 
     visit new_client_path
 
@@ -21,7 +21,7 @@ feature 'session rating scale input' do
     expect(page).to have_content 'muss ausgefüllt werden'
 
     fill_in 'Bitte geben Sie Ihren Namen und Vornamen an', with: 'Hanf Ueli'
-    select 'Dr. Paul Weston', from: 'client_therapist_id'
+    select 'Dr. Paul Weston', from: 'client_counselor_id'
 
     choose 'Erwachsene'
 
@@ -38,7 +38,7 @@ feature 'session rating scale input' do
 
     expect { click_button 'Abschliessen' }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
-    expect(Survey::Session.last.therapist).to eq Client.last.therapist
+    expect(Survey::Session.last.counselor).to eq Client.last.counselor
 
     expect(page).to have_content 'Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.'
   end

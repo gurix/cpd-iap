@@ -1,0 +1,6 @@
+main role="main"
+  - title t('.title')
+  = render 'form'
+
+  .pull-right
+    = link_to t('.delete', name: @counselor.name), counselor_path(@counselor), class: 'text-danger',  method: :delete,  data: { confirm: t('.ask_for_delete') }

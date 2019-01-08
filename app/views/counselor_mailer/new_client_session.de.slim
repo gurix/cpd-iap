@@ -1,9 +1,9 @@
-b Hallo #{@therapist.name},
+b Hallo #{@counselor.name},
 p #{@client.name} (#{@client.identifier}) hat soeben seine Sitzung bewertet. Unter folgender Adresse sehen Sie die Statistik über die letzten Sitzungen: 
-= link_to therapist_client_url(@therapist.token, @client.token), therapist_client_url(@therapist.token, @client.token)
+= link_to counselor_client_url(@counselor.token, @client.token), counselor_client_url(@counselor.token, @client.token)
 p Unter folgender Adresse haben Sie Zufgriff auf die Statistik all ihrer Klienten:
-= link_to therapist_url(@therapist.token), therapist_url(@therapist.token)
+= link_to counselor_url(@counselor.token), counselor_url(@counselor.token)
 p 
   i Aus Sicherheitsgründen verfällt dieser Link nach einer gewissen Zeit. Sie können sich aber jederzeit Ihren Zufgriff wiederherstellen unter:
   br
-  = link_to new_reset_therapist_token_url, new_reset_therapist_token_url
+  = link_to new_reset_counselor_token_url, new_reset_counselor_token_url

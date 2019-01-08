@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 feature 'client' do
-  let(:sigmund) { Therapist.create(name: 'Sigmund Freud', email: 'sigmund@sigmund-freud.at') }
+  let(:sigmund) { Counselor.create(name: 'Sigmund Freud', email: 'sigmund@sigmund-freud.at') }
 
   scenario 'entering a client identifier works either upcase or downcase' do
-    client = create :client, therapist: sigmund, identifier: 'test', class_of_age: 'adult'
+    client = create :client, counselor: sigmund, identifier: 'test', class_of_age: 'adult'
 
     visit new_client_path
 
@@ -24,13 +24,13 @@ feature 'client' do
   end
 
   scenario 'a client changes his preferences' do
-    Therapist.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie')
+    Counselor.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie')
 
-    client = create :client, therapist: sigmund, class_of_age: 'adult'
+    client = create :client, counselor: sigmund, class_of_age: 'adult'
 
     visit edit_client_path(client)
 
-    select 'Dr. Paul Weston', from: 'client_therapist_id'
+    select 'Dr. Paul Weston', from: 'client_counselor_id'
 
     choose 'Kind / Jugendliche'
 

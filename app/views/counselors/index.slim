@@ -1,0 +1,22 @@
+- title t('.title')
+main role="main"
+
+  table.table
+    caption= t('.table_caption')
+    tr
+      th= t('.name')
+      th= t('.email')
+      th= t('.statistics')
+      th
+    - @counselors.each do |counselor|
+      tr
+        td = counselor.name
+        td = mail_to counselor.email
+        td
+          = link_to t('.amount_of_sessions', sessions: counselor.sessions.size), counselor_path(counselor.token)
+          br
+          = link_to t('.amount_of_clients', clients: counselor.clients.size), counselor_path(counselor.token)
+        td
+          = link_to t('.edit', name: counselor.name), edit_counselor_path(counselor)
+  
+  = link_to t('.new'), new_counselor_path

@@ -13,7 +13,7 @@ class Client
   validates :name, presence: true, unless: 'identifier.blank?'
 
   has_many :sessions, dependent: :destroy, inverse_of: :client, class_name: 'Survey::Session'
-  belongs_to :therapist, inverse_of: :clients
+  belongs_to :counselor, inverse_of: :clients
 
   attr_accessor :second_step
 
@@ -21,8 +21,8 @@ class Client
     sessions.asc(:created_at).last
   end
 
-  def last_therapist
-    last_session&.therapist
+  def last_counselor
+    last_session&.counselor
   end
 
   def identifier=(value)

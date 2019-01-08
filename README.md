@@ -2,7 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/gurix/clinical_process_diagnostics.png)](https://codeclimate.com/github/gurix/clinical_process_diagnostics)
 
 # Clinical Process Diagnostics
-Clinical process diagnostics helps to track the progress over time during a psychotherapie treatment. Clients rate each session afterwards by filling out a survey on a computer or tablet. Each therapist gets a notification when a client rated a session. The notification includes the link to an profile including changes of rating over time.
+Clinical process diagnostics helps to track the progress over time during a psychotherapie treatment. Clients rate each session afterwards by filling out a survey on a computer or tablet. Each counselor gets a notification when a client rated a session. The notification includes the link to an profile including changes of rating over time.
 
 At the moment, we only support german language. Depending on the age, session report scale or children session report scale will be displayed.
 
