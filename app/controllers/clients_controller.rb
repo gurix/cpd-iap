@@ -56,12 +56,12 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:identifier, :name, :class_of_age, :counselor_id, :second_step)
+    params.require(:client).permit(:identifier, :name, :counselor_id, :second_step)
   end
 
   # Set the path depending on kind of survey used for last survey
   def new_client_session_path
-    "/clients/#{@client.id}/#{@client.session_type_by_age.name.tableize}/new"
+    "/clients/#{@client.id}/survey/session_rating_scales/new"
   end
 
   def load_counselors

@@ -42,9 +42,6 @@ de:
       new_client: Meine Sitzung bewerten
 
   clients:
-    children_session_rating_scale:
-      caption: Children Session Rating Scale Sitzungen von %{name}
-      dimensions: *SRS_DIMENSIONS
     session_rating_scale:
       caption: Session Rating Scale Sitzungen von %{name}
       dimensions: *SRS_DIMENSIONS
@@ -66,7 +63,6 @@ de:
 
     show:
       survey:
-        children_session_rating_scale: Children Session Rating Scale (CSRS)
         session_rating_scale: Session Rating Scale (SRS)
       other_clients: Liste aller Klienten
       relationship: Beziehung
@@ -76,10 +72,6 @@ de:
       date: Zeitpunkt der Bewertung
       comment: Kommentar
       count: Sitzungsnummer
-
-    class_of_age:
-      child: Kind / Jugendliche
-      adult: Erwachsene
 
   counselors:
     new:
@@ -143,25 +135,6 @@ de:
           positive: Insgesamt gesehen war die heutige Sitzung für mich angemessen.
         comment: Was ich sonst noch sagen möchte.
 
-      children_session_rating_scale:
-        title: Wie war unsere Sitzung heute?
-        save: Ich bin fertig!
-        slider_infos: Im Folgenden kannst du die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
-        dimensions: *SRS_DIMENSIONS
-        relationship:
-          negative: Ich habe mich mit der Bratungsperson nicht wohlgefühlt.
-          positive: Ich habe mich mit dem Beratungsperson wohlgefühlt.
-        goals_and_topics:
-          negative: Was wir gemacht haben war nicht wichtig für mich.
-          positive: Was wir gemacht haben war wichtig für mich.
-        approach_or_method:
-          negative: Wie wir heute gearbeitet haben war nicht hilfreich.
-          positive: Wie wir heute gearbeitet haben war hilfreich.
-        overall:
-          negative: Ich fand die heutige Sitzung über alles gesehen schlecht.
-          positive: Ich fand die heutige Sitzung über alles gesehen gut.
-        comment: Was ich sonst noch sagen möchte.
-
       create:
         title: Bewertung gespeichert
         session_suceessfully_created: Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.
@@ -174,4 +147,3 @@ de:
         client:
           identifier: Bitte geben Sie Ihre Klienten-Nummer an.
           name: Bitte geben Sie Ihren Namen und Vornamen an.
-          class_of_age: Bitte geben Sie Ihre Alterskategorie an

@@ -1,12 +1,11 @@
 main role="main"
   .row
     .col-xs-12.col-md-6.col-md-offset-3
-      = simple_form_for(@client) do |f| 
+      = simple_form_for(@client) do |f|
         = f.input :identifier, hint: t('.identifier_hint'), input_html: { autocapitalize: 'none', autocomplete: 'off' } if @client.identifier.blank?
         - if @client.identifier.present?
           = f.association :counselor, collection: @counselors, include_blank: '', label_method: "name", label: t('.please_choose_a_counselor')
-          = f.input :name, input_html: { autocomplete: 'off' }, required: true 
-          = f.input :class_of_age, as: :radio_buttons, collection: t('clients.class_of_age').map{ |x| [x.first, raw(x.last)]}, label_method: :last, value_method: :first
+          = f.input :name, input_html: { autocomplete: 'off' }, required: true
           = f.input :identifier, as: :hidden
           = f.hidden_field :second_step, value: true
         .form-group

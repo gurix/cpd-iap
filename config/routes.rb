@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :clients, only: [:index, :new, :create, :edit, :update] do
     namespace :survey do
       resources :session_rating_scales, controller: 'sessions', type: 'Survey::SessionRatingScale'
-      resources :children_session_rating_scales, controller: 'sessions', type: 'Survey::ChildrenSessionRatingScale'
     end
   end
 

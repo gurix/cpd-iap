@@ -29,7 +29,7 @@ module Survey
     end
 
     def type
-      type_class = [Survey::SessionRatingScale, Survey::ChildrenSessionRatingScale].find { |x| x.name == params[:type] }
+      type_class = [Survey::SessionRatingScale].find { |x| x.name == params[:type] }
       type_class || 'Survey::Session'
     end
 
