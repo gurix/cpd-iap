@@ -29,7 +29,7 @@ h2.caption= t('.dimensions.approach_or_method')
 .row
   .col-xs-10.col-xs-offset-1
     = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.approach_or_method') }
-  
+
 h2.caption= t('.dimensions.overall')
 .row
   .col-xs-6
@@ -40,19 +40,10 @@ h2.caption= t('.dimensions.overall')
   .col-xs-10.col-xs-offset-1
     = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.overall') }
 
-h2.caption= t('.dimensions.coping')
-.row
-  .col-xs-6
-    = t('.coping.negative')
-  .col-xs-6.text-right
-    = t('.coping.positive')
-.row
-  .col-xs-10.col-xs-offset-1
-    = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.coping') }
 .row
   .col-xs-12
     = f.input :comment, as: :text, label: t('.comment')
-    
+
 .form-group
   br
   = f.submit t('.save'), class: 'btn btn-primary btn-block'

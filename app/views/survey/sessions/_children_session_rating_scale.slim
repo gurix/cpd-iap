@@ -60,21 +60,6 @@ h2.sr-only = t('.dimensions.overall')
   .col-xs-1.emoticon.text-center aria-hidden="true"
     = image_tag('smile.svg')
 
-h2.sr-only = t('.dimensions.coping')
-.row
-  .col-xs-4
-      = t('.coping.negative')
-  .col-xs-4
-  .col-xs-4.text-right
-      = t('.coping.positive')
-.row
-  .col-xs-1.emoticon.text-center aria-hidden="true"
-    = image_tag('frown.svg')
-  .col-xs-10
-    = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.coping') }
-  .col-xs-1.emoticon.text-center aria-hidden="true"
-    = image_tag('smile.svg')
-
 .row
   .col-xs-12
     = f.input :comment, as: :text, label: t('.comment')

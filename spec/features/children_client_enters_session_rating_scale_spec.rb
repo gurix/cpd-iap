@@ -33,7 +33,6 @@ feature 'children session rating scale input' do
     find("input[id$='survey_children_session_rating_scale_goals_and_topics']").set 20
     find("input[id$='survey_children_session_rating_scale_approach_or_method']").set 10
     find("input[id$='survey_children_session_rating_scale_overall']").set 20
-    find("input[id$='survey_children_session_rating_scale_coping']").set 10
 
     find("textarea[id$='survey_children_session_rating_scale_comment']").set 'Teste den Test'
 

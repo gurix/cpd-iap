@@ -3,7 +3,7 @@ div aria-hidden="true"
     .col-xs-12
       #csrs_relationship.ct-chart.ct-double-octave
       .headstand = t('.dimensions.relationship')
-  .row    
+  .row
     .col-xs-12
       #csrs_goals_and_topics.ct-chart.ct-double-octave
       .headstand = t('.dimensions.goals_and_topics')
@@ -13,13 +13,9 @@ div aria-hidden="true"
       .headstand = t('.dimensions.approach_or_method')
   .row
     .col-xs-12
-      #csrs_coping.ct-chart.ct-double-octave
-      .headstand = t('.dimensions.coping')
-  .row
-    .col-xs-12
-      #csrs_overall.ct-chart.ct-double-octave 
+      #csrs_overall.ct-chart.ct-double-octave
       .headstand = t('.dimensions.overall')
-      
+
 javascript:
   new Chartist.Line('#csrs_relationship', {
     labels: #{(1..sessions.size).to_a},
@@ -53,24 +49,16 @@ javascript:
     ]
   }, options);
 
-  new Chartist.Line('#csrs_coping', {
-    labels: #{(1..sessions.size).to_a},
-    series: [
-      #{sessions.map &:coping},
-      #{sessions.map {|session| 90 }}
-    ]
-  }, options);
-
 table.table.table-responsive
   caption = t('.caption', name: @client.name)
   tr
-    th width="5%" 
+    th width="5%"
       .sr-only= t('clients.show.count')
     th width="30%" = t('clients.show.date')
     th = t('clients.show.comment')
     - t('.dimensions').values.each do |value|
       th= value
-  - sessions.each_with_index do |session, index| 
+  - sessions.each_with_index do |session, index|
     tr
       td = index + 1
       td = l(session.created_at)

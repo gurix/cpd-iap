@@ -4,8 +4,7 @@ de:
     goals_and_topics: Ziele und Themen
     approach_or_method: Vorgehen
     overall: Insgesamt
-    coping: Bewältigung
-  
+
   shared:
     save: Speichern
     cancel: Abbrechen
@@ -18,30 +17,30 @@ de:
     required: "* bezeichnet Pflichtfeld"
     unknown: Unbekannt
     staging_warning: Sie befinden sich auf einer Testumgebung. Als Klient/in sollten Sie diese Warnung nicht sehen, melden Sie sich bei Ihrer Beratungsperson.
-  
+
   emails:
     reset_token:
       subject: Zugriffsinformationen für %{name}
     new_client_session:
       subject: "Neue Bewertung von %{identifier}"
-  
+
   reset_therapist_tokens:
     does_not_exist: Die E-Mail-Adresse %{email} ist keinem Therapeuten zugeordnet.
     new:
       instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Therapeut/in hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
       title: Zugriffsinformationen zurücksetzen
-      email: E-Mail 
+      email: E-Mail
       send: Zugriffsinformationen zusenden
       back: Zurück zur Startseite
 
     create:
       email_sent: Ihre Zugriffsinformationen werden Ihnen in Kürze per E-Mail zugestellt.
-  
+
   pages:
     index:
       title: Prozessmessung
       new_client: Meine Sitzung bewerten
-  
+
   clients:
     children_session_rating_scale:
       caption: Children Session Rating Scale Sitzungen von %{name}
@@ -61,10 +60,10 @@ de:
       access_for_therapists: Zugang für Beratende
       please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
       ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
-    
+
     create:
       title: Angaben zum Klient %{identifier}
-      
+
     show:
       survey:
         children_session_rating_scale: Children Session Rating Scale (CSRS)
@@ -74,7 +73,6 @@ de:
       goals_and_topics: Ziele und Themen
       approach_or_method: Vorgehen
       overall: Insgesamt
-      coping: Bewältigung
       date: Zeitpunkt der Bewertung
       comment: Kommentar
       count: Sitzungsnummer
@@ -86,7 +84,7 @@ de:
   therapists:
     new:
       title: Therapeut erfassen
-    
+
     edit:
       title: Therapeut beabeiten
       ask_for_delete: Wollen Sie diesen Therapeut wirkilich löschen?
@@ -94,15 +92,15 @@ de:
 
     destroy:
       deleted: Therapeut wurde gelöscht
-    
+
     update:
       updated: Therapeut wurde angepasst
-    
+
     create:
       created: Therapeut wurde erstellt.
-    
+
     index:
-      table_caption: Im System erfasste Therapeuten 
+      table_caption: Im System erfasste Therapeuten
       title: Therapeuten
       name: Name
       email: E-Mail-Adresse
@@ -121,7 +119,7 @@ de:
       amount_of_client_sessions: "%{sessions} Sitzungen bewertet"
 
   survey:
-    sessions: 
+    sessions:
       new:
         therapist: "Die heutige Sitzung wurde begleitet von %{name}"
         ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
@@ -143,11 +141,8 @@ de:
         overall:
           negative: Die heutige Sitzung fand ich nicht gut.
           positive: Insgesamt bin ich mit der Sitzung zufrieden.
-        coping:
-          negative: Ich bin noch nicht bereit das Problem selbstständig anzugehen.
-          positive: Ich bin bereit das Problem selbstständig anzugehen.
         comment: Was ich sonst noch sagen möchte.
-      
+
       children_session_rating_scale:
         title: Wie war unsere Sitzung heute?
         save: Ich bin fertig!
@@ -165,9 +160,6 @@ de:
         overall:
           negative: Ich fand die heutige Sitzung über alles gesehen schlecht.
           positive: Ich fand die heutige Sitzung über alles gesehen gut.
-        coping:
-          negative: Ich bin nicht zuversichtlich, dass ich meine Probleme lösen kann.
-          positive: Ich bin jetzt zuversichtlich, dass ich meine Probleme lösen kann.
         comment: Was ich sonst noch sagen möchte.
 
       create:

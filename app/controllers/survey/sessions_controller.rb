@@ -47,7 +47,7 @@ module Survey
 
     def session_params
       required_param = "survey_#{type.name.demodulize.underscore}"
-      params.require(required_param).permit(:therapist_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :coping, :comment)
+      params.require(required_param).permit(:therapist_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :comment)
     end
   end
 end
