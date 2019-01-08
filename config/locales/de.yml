@@ -130,17 +130,17 @@ de:
         slider_infos: Im Folgenden können Sie die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
         dimensions: *SRS_DIMENSIONS
         relationship:
-          negative: Ich fühle mich nicht verstanden und respektiert.
-          positive: Ich fühle mich verstanden und respektiert.
+          negative: Ich fühlte mich nicht gehört, verstanden und respektiert.
+          positive: Ich fühlte mich gehört, verstanden und respektiert.
         goals_and_topics:
-          negative: Wir arbeiten nicht an Themen die mir wichtig sind.
-          positive: Wir arbeiten an Themen die mir wichtig sind.
+          negative: Wir haben nicht daran gearbeitet und darüber geredet, woran ich arbeiten und worüber ich reden wollte.
+          positive: Wir haben daran gearbeitet und darüber geredet, woran ich arbeiten und worüber ich reden wollte.
         approach_or_method:
-          negative: Das Vorgehen in der Beratung / Therapie finde ich unpassend.
-          positive: Das Vorgehen in der Beratung / Therapie entspricht mir.
+          negative: Die Herangehensweise des Therapeuten passt nicht gut für mich.
+          positive: Die Herangehensweise des Therapeuten passt gut für mich.
         overall:
-          negative: Die heutige Sitzung fand ich nicht gut.
-          positive: Insgesamt bin ich mit der Sitzung zufrieden.
+          negative:  In der heutigen Sitzung hat etwas gefehlt.
+          positive: Insgesamt gesehen war die heutige Sitzung für mich angemessen.
         comment: Was ich sonst noch sagen möchte.
 
       children_session_rating_scale:
