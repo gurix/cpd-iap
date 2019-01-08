@@ -35,6 +35,6 @@ feature 'manage therapists' do
 
     visit edit_therapist_path(therapist)
 
-    expect { click_link 'Therapeut löschen' }.to change { Therapist.count }.by(-1)
+    expect { click_link 'Beratungspersonlöschen' }.to change { Therapist.count }.by(-1)
   end
 end

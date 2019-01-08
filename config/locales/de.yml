@@ -25,9 +25,9 @@ de:
       subject: "Neue Bewertung von %{identifier}"
 
   reset_therapist_tokens:
-    does_not_exist: Die E-Mail-Adresse %{email} ist keinem Therapeuten zugeordnet.
+    does_not_exist: Die E-Mail-Adresse %{email} ist keiner Beratungsperson zugeordnet.
     new:
-      instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Therapeut/in hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
+      instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Beratungsperson hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
       title: Zugriffsinformationen zurücksetzen
       email: E-Mail
       send: Zugriffsinformationen zusenden
@@ -50,15 +50,15 @@ de:
       dimensions: *SRS_DIMENSIONS
     edit:
       title: Meine Einstellungen anpassen
-      please_choose_a_therapist: Bitte wählen Sie Ihre/n Therapeut/in
+      please_choose_a_therapist: Bitte wählen Sie Ihre Beratungsperson
       info_title: Diese Einstellungen betreffen die Klienten-Nummer
       info_body: Bitte überprüfen Sie die Klienten-Nummer nochmals, bevor Sie die Anpassungen durchführen.
       info_exit: Bei falscher Klienten-Nummer, melden Sie sich nochmals neu an.
     new:
       title: Sitzung bewerten
-      identifier_hint: Die Klienten-Nummer wird Ihnen durch Ihre/n Therapeutin/en bekannt gegeben.
+      identifier_hint: Die Klienten-Nummer wird Ihnen durch Ihre Beratungsperson bekannt gegeben.
       access_for_therapists: Zugang für Beratende
-      please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
+      please_choose_a_therapist: Bitte wählen Sie Ihre Beratungsperson aus.
       ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
     create:
@@ -83,32 +83,32 @@ de:
 
   therapists:
     new:
-      title: Therapeut erfassen
+      title: Beratungspersonerfassen
 
     edit:
-      title: Therapeut beabeiten
-      ask_for_delete: Wollen Sie diesen Therapeut wirkilich löschen?
-      delete: "%{name} als Therapeut löschen"
+      title: Beratungspersonbeabeiten
+      ask_for_delete: Wollen Sie diesen Beratungspersonwirkilich löschen?
+      delete: "%{name} als Beratungspersonlöschen"
 
     destroy:
-      deleted: Therapeut wurde gelöscht
+      deleted: Beratungspersonwurde gelöscht
 
     update:
-      updated: Therapeut wurde angepasst
+      updated: Beratungspersonwurde angepasst
 
     create:
-      created: Therapeut wurde erstellt.
+      created: Beratungspersonwurde erstellt.
 
     index:
-      table_caption: Im System erfasste Therapeuten
-      title: Therapeuten
+      table_caption: Im System erfasste Beratungspersonen
+      title: Beratungspersonen
       name: Name
       email: E-Mail-Adresse
       statistics: Statistiken
       amount_of_sessions: "%{sessions} Sitzungen bewertet"
       amount_of_clients: "%{clients} Klienten"
       edit: "%{name} bearbeiten"
-      new: Einen Therapeuten neu erfassen
+      new: Einen Beratungsperson neu erfassen
 
     show:
       logout: Zurück zur Startseite
@@ -149,8 +149,8 @@ de:
         slider_infos: Im Folgenden kannst du die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
         dimensions: *SRS_DIMENSIONS
         relationship:
-          negative: Ich habe mich mit dem Therapeut / der Therapeutin nicht wohlgefühlt.
-          positive: Ich habe mich mit dem Therapeut / der Therapeutin wohlgefühlt.
+          negative: Ich habe mich mit der Bratungsperson nicht wohlgefühlt.
+          positive: Ich habe mich mit dem Beratungsperson wohlgefühlt.
         goals_and_topics:
           negative: Was wir gemacht haben war nicht wichtig für mich.
           positive: Was wir gemacht haben war wichtig für mich.
