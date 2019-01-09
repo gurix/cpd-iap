@@ -34,7 +34,7 @@ feature 'session rating scale input' do
 
     find("textarea[id$='survey_session_rating_scale_comment']").set 'Teste den Test'
 
-    expect { click_button 'Abschliessen' }.to change { ActionMailer::Base.deliveries.count }.by(1)
+    click_button 'Abschliessen'
 
     expect(Survey::Session.last.counselor).to eq Client.last.counselor
 
