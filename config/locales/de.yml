@@ -128,8 +128,8 @@ de:
           negative: Wir haben nicht daran gearbeitet und darüber geredet, woran ich arbeiten und worüber ich reden wollte.
           positive: Wir haben daran gearbeitet und darüber geredet, woran ich arbeiten und worüber ich reden wollte.
         approach_or_method:
-          negative: Die Herangehensweise des Therapeuten passt nicht gut für mich.
-          positive: Die Herangehensweise des Therapeuten passt gut für mich.
+          negative: Die Herangehensweise der Beratungsperson passt nicht gut für mich.
+          positive: Die Herangehensweise der Beratungsperson passt gut für mich.
         overall:
           negative:  In der heutigen Sitzung hat etwas gefehlt.
           positive: Insgesamt gesehen war die heutige Sitzung für mich angemessen.
