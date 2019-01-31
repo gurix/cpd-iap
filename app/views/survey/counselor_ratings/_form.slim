@@ -1,0 +1,15 @@
+h1.hidden = title "Bewertung der Sitzung mit #{@client.name} (#{@client.identifier}) vom #{l(@session.created_at, format: :short)}"
+
+dl
+  dt = Counselor.human_attribute_name(:name)
+  dd #{@session.counselor.name}
+
+  dt = t('.session_created_at')
+  dd = l(@session.created_at, format: :short)
+
+hr
+
+= simple_form_for(@counselor_rating, url: client_survey_session_rating_scale_counselor_rating_path) do |f|
+  = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
+  = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
+  = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)

@@ -45,6 +45,8 @@ de:
     session_rating_scale:
       caption: Session Rating Scale Sitzungen von %{name}
       dimensions: *SRS_DIMENSIONS
+      counselor_rating: Einschätzung der Beratungsperson
+      counselor_rating_link: Einschätzung der Beratungsperson für die Sitzung vom %{date}
     edit:
       title: Meine Einstellungen anpassen
       please_choose_a_counselor: Bitte wählen Sie Ihre Beratungsperson
@@ -140,10 +142,20 @@ de:
         session_suceessfully_created: Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.
         new_session: Neue Bewertung erfassen
 
+    counselor_ratings:
+      form:
+        session_created_at: Zeitpunkt an dem die Sitzung vom Klienten bewertet wurde
+
   mongoid:
      attributes:
         counselor:
           email: E-Mail
+          name: Name der Beratungsperson
         client:
           identifier: Bitte geben Sie Ihre Klienten-Nummer an.
           name: Bitte geben Sie Ihren Namen und Vornamen an.
+
+        survey/counselor_rating:
+          session_number: Wievielter Termin?
+          session_date: Zeitpunkt an dem die Sitzung stattgefunden hat
+          session_duration: Dauer der Sitzung in Minuten

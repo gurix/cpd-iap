@@ -58,6 +58,8 @@ table.table.table-responsive
     th = t('clients.show.comment')
     - t('.dimensions').values.each do |value|
       th= value
+    th
+      .sr-only = t('.counselor_rating')
   - sessions.each_with_index do |session, index|
     tr
       td = index + 1
@@ -65,3 +67,4 @@ table.table.table-responsive
       td = session.comment
       - t('.dimensions').keys.each do |key|
         td= session[key]
+      td = link_to(t('.counselor_rating_link', date: l(session.created_at, format: :short)), [:new,session.client, session,:counselor_rating])

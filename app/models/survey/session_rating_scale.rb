@@ -1,6 +1,8 @@
 module Survey
   class SessionRatingScale < Session
-    field :version, type: Integer, default: 4
+    field :version, type: Integer, default: 1
+
+    has_one :counselor_rating, inverse_of: :session, class_name: 'Survey::CounselorRating'
 
     validates :version, presence: true
 
