@@ -14,6 +14,7 @@ de:
     back: Zurück
     ask_for_delete_entry: Wollen Sie diesen Eintrag wirklich löschen?
     error: Die Eingabe konnte nicht gespeichert werden, überprüfen Sie bitte ihre Eingaben.
+    success: Ihre Eingabe wurde gespeichert.
     required: "* bezeichnet Pflichtfeld"
     unknown: Unbekannt
     staging_warning: Sie befinden sich auf einer Testumgebung. Als Klient/in sollten Sie diese Warnung nicht sehen, melden Sie sich bei Ihrer Beratungsperson.
@@ -143,6 +144,8 @@ de:
         new_session: Neue Bewertung erfassen
 
     counselor_ratings:
+      saved: Die Daten wurde erfolgreich gespeichert
+      error: Die Daten konnten nicht gespeichert werden
       form:
         session_created_at: Zeitpunkt an dem die Sitzung vom Klienten bewertet wurde
 

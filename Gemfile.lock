@@ -126,6 +126,8 @@ GEM
       mongoid (>= 2.0)
       mongoid-compatibility
       rspec (~> 3.3)
+    mongoid-sadstory (0.0.2)
+      mongoid
     multi_json (1.13.1)
     nio4r (2.2.0)
     nokogiri (1.8.3)
@@ -275,6 +277,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mongoid (~> 6.0.0)
   mongoid-rspec
+  mongoid-sadstory
   poltergeist
   pry
   pry-rails

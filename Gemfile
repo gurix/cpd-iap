@@ -36,6 +36,9 @@ gem 'factory_bot_rails'
 # Collecting Locale data for Ruby on Rails
 gem 'rails-i18n'
 
+# Adds support for multiparameter fields to mongoid 4.x series.
+gem 'mongoid-sadstory'
+
 # Rails app configuration using ENV
 gem 'dotenv-rails'
 

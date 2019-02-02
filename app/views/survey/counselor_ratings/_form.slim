@@ -13,3 +13,4 @@ hr
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
   = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)
+  = f.submit t('shared.save'), class: 'btn btn-primary'
