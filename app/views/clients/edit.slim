@@ -8,7 +8,5 @@ br
 .row
   .col-xs-12.col-md-6.col-md-offset-3
     .alert.alert-info
-      | #{t('.info_title')}
-      b #{@client.identifier}.
-      | #{t('.info_body')}
-      = link_to t('.info_exit'), root_path
+      | #{t('.info_title')} <strong>#{@client.identifier}</strong>. #{t('.info_body')}
+      =< link_to t('.info_exit'), root_path

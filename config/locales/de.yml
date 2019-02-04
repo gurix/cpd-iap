@@ -50,8 +50,8 @@ de:
     edit:
       title: Meine Einstellungen anpassen
       please_choose_a_counselor: Bitte wählen Sie Ihre Beratungsperson
-      info_title: Diese Einstellungen betreffen die Klienten-Nummer
-      info_body: Bitte überprüfen Sie die Klienten-Nummer nochmals, bevor Sie die Anpassungen durchführen.
+      info_title: Diese Einstellungen betreffen den Klienten mit der Nummer
+      info_body: Bitte überprüfen Sie diese Nummer nochmals, bevor Sie die Anpassungen durchführen.
       info_exit: Bei falscher Klienten-Nummer, melden Sie sich nochmals neu an.
     new:
       title: Sitzung bewerten
