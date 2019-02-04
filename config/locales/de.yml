@@ -148,6 +148,55 @@ de:
       error: Die Daten konnten nicht gespeichert werden
       form:
         session_created_at: Zeitpunkt an dem die Sitzung vom Klienten bewertet wurde
+        intervention_contents_title: Welche Interventionen/Aktivitäten haben Sie in dieser Sitzung durchgeführt? (Mehrfachantworten möglich)
+        intervention_contents:
+          1: Ziel und Anliegen des Beratungstermins definiert
+          2: Mit Arbeitsheften, Tagebüchern oder Ähnlichem gearbeitet
+          3: Interessen, Werte, Fähigkeiten/Kompetenzen, Einstellungen, Persönlichkeitseigenschaften durch den Einsatz von quantitativen Verfahren (psychometrische Fragebogen/Tests) besprochen und geklärt
+          4: Interessen, Werte, Fähigkeiten/Kompetenzen, Einstellungen, Persönlichkeitseigenschaften durch den Einsatz von qualitativen Verfahren (z.B. Rey-Arbeitsprobe, Kompetenzenbilanz, RIASEC-Arbeitsblatt, ID, Berufsfotos, CCI, Entwicklungslinie...) besprochen und geklärt
+          5: Werte geklärt
+          6: Kompetenzen erarbeitet
+          7: Persönliche Leistungen und Erfolge reflektiert
+          8: Rollenmodelle/Vorbilder besprochen (z.B. Personen, die eine ähnliche Herausforderung erfolgreich bewältigt haben)
+          9: (fixe) Konzepte, Überzeugungen, Glaubenssätze, Fehlannahmen aufgedeckt, kritisch geprüft im Sinne einer kognitiven Umstrukturierung gemacht
+          10: Techniken der psychologischen Gesprächsführung eingesetzt (z.B. Skalieren, zirkuläres Fragen, Paraphrasieren, Spiegeln und Validieren von Emotionen, Konkretisieren ("Was macht es aus?")
+          11: Techniken der psychologischen Gesprächsführung eingesetzt (z.B. Skalieren, zirkuläres Fragen, Paraphrasieren, Spiegeln und Validieren von Emotionen, Konkretisieren ("Was macht es aus?")
+          12: Berufs- und Aus-/Weiterbildungsinformationen Informationen vermittelt (zu Arbeitsmarkt, Berufsbildern, Studien- und Weiterbildungsgängen)
+          13: Gemeinsam Berufs- und Weiterbildungsoptionen erkundet/besprochen
+          14: Empfehlungen für Websiten oder Literatur abgegeben
+          15: Bewerbungsunterlagen und -strategien besprochen
+          16: Rollenspiele durchgeführt (z.B. Vorstellungsgespräch oder Präsentation in AC simuliert / eingeübt)
+          17: Aktivitäts- und Zeitplan für die konkreten nächsten Schritte erstellt
+          18: wahrgenommene Hindernissen identifiziert und Strategien zu deren Überwindung erarbeitet
+          19: Unterstützung durch die Umwelt / das soziale Umfeld angeregt
+          20: Hausaufgaben aufgegeben (z.B. Tagebuch führen, Auftrag zum Recherchieren zu Arbeitsmarkt, Berufsbildern/Funktionen, Arbeitgebern, Stellenangeboten, ...)
+          21: "Anderes:"
+
+        crq_title: Wie intensiv haben Sie mit dem Klienten/der Klientin über folgende Aspekte gesprochen?
+        crq_scale:
+          0: überhaupt nicht
+          1: kaum
+          2: teilweise
+          3: viel
+          4: sehr viel
+
+        relationship:
+          positive: Ich habe den Klienten gehört, verstanden und respektiert.
+          negative: Ich habe den Klienten nicht gehört, verstanden und respektiert.
+
+        goals_and_topics:
+          positive: Wir haben daran gearbeitet und darüber geredet, woran die Klientin/der Klient arbeiten und worüber die Klientin/der Klient reden wollte
+          negative: Wir haben nicht daran gearbeitet und darüber geredet, woran die Klientin/der Klient arbeiten und worüber die Klientin/der Klient reden wollte.
+
+        approach_or_method:
+          positive: Ich habe das Gefühl, meine Herangehensweise passt gut für die Klientin/den Klienten.
+          negative: Ich habe das Gefühl, meine Herangehensweise passt nicht gut für die Klientin/den Klienten.
+
+        overall:
+          positive: Insgesamt gesehen war die heutige Sitzung für mich angemessen.
+          negative: In der heutigen Sitzung hat etwas gefehlt.
+
+        srs_title: Bitte bewerten Sie die heutige Sitzung.
 
   mongoid:
      attributes:
@@ -162,3 +211,8 @@ de:
           session_number: Wievielter Termin?
           session_date: Zeitpunkt an dem die Sitzung stattgefunden hat
           session_duration: Dauer der Sitzung in Minuten
+          intervention_contents_others: Andere Interventionen/Aktivitäten
+          crq_knowledge_and_skills: Vorhandene oder benötigte Kenntnisse und Fähigkeiten für berufliche Möglichkeiten?
+          crq_motivation: Motivation und Ziele für berufliche Möglichkeiten?
+          crq_environment: Einschränkungen oder vorhandene Unterstüzung im privaten oder beruflichen Umfeld?
+          crq_activity: Verschiedene benötigte Aktivitäten zur Gestaltung der eigenen Laufbahn?

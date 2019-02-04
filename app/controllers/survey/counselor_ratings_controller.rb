@@ -41,7 +41,8 @@ module Survey
     end
 
     def counselor_rating_params
-      params.require(:survey_counselor_rating).permit(CounselorRating.fields.keys)
+      simple_attributes = CounselorRating.fields.keys - ['intervention_contents']
+      params.require(:survey_counselor_rating).permit(simple_attributes, intervention_contents: [])
     end
 
     def flash_message_for(saved)

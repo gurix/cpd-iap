@@ -13,4 +13,57 @@ hr
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
   = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)
+  fieldset
+    legend = t('.crq_title')
+    = f.input :crq_knowledge_and_skills, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
+    = f.input :crq_motivation, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
+    = f.input :crq_environment, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
+    = f.input :crq_activity, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
+
+  fieldset
+    legend = t('.intervention_contents_title')
+    - t('.intervention_contents').each do |k,v|
+      label.check_box
+        = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents.include?(k.to_s)}" }, k, nil
+        = "#{k}: #{v}"
+    = f.input :intervention_contents_others, as: :text
+
+  fieldset
+    legend = t('.srs_title')
+    .row
+      .col-xs-6
+         = t('.relationship.negative')
+      .col-xs-6.text-right
+        = t('.relationship.positive')
+    .row
+      .col-xs-10.col-xs-offset-1
+        = f.input :counselor_relationship, as: :range, label: false, min: 0, max: 100, step: 1
+
+    .row
+      .col-xs-6
+         = t('.goals_and_topics.negative')
+      .col-xs-6.text-right
+        = t('.goals_and_topics.positive')
+    .row
+      .col-xs-10.col-xs-offset-1
+        = f.input :counselor_goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1
+
+    .row
+      .col-xs-6
+         = t('.approach_or_method.negative')
+      .col-xs-6.text-right
+        = t('.approach_or_method.positive')
+    .row
+      .col-xs-10.col-xs-offset-1
+        = f.input :counselor_approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1
+
+    .row
+      .col-xs-6
+         = t('.overall.negative')
+      .col-xs-6.text-right
+        = t('.overall.positive')
+    .row
+      .col-xs-10.col-xs-offset-1
+        = f.input :counselor_overall, as: :range, label: false, min: 0, max: 100, step: 1
+
   = f.submit t('shared.save'), class: 'btn btn-primary'
