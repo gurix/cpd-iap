@@ -21,11 +21,11 @@ feature 'counselor rating input' do
 
     fill_in 'Andere Interventionen/Aktivitäten', with: 'Ein Bier zusammen getrunken.'
 
-    select 7, from: 'survey_counselor_rating_session_date_3i'
+    select '7', from: 'survey_counselor_rating_session_date_3i'
     select 'März', from: 'survey_counselor_rating_session_date_2i'
-    select 2017, from: 'survey_counselor_rating_session_date_1i'
-    select 22, from: 'survey_counselor_rating_session_date_4i'
-    select 11, from: 'survey_counselor_rating_session_date_5i'
+    select '2017', from: 'survey_counselor_rating_session_date_1i'
+    select '22', from: 'survey_counselor_rating_session_date_4i'
+    select '11', from: 'survey_counselor_rating_session_date_5i'
 
     find("input[id$='survey_counselor_rating_counselor_relationship']").set 10
     find("input[id$='survey_counselor_rating_counselor_goals_and_topics']").set 20
