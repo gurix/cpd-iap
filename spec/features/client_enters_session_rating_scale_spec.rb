@@ -34,9 +34,13 @@ feature 'session rating scale input' do
 
     find("textarea[id$='survey_session_rating_scale_comment']").set 'Teste den Test'
 
-    click_button 'Abschliessen'
+    expect { click_button 'Abschliessen' }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
-    expect(Survey::Session.last.counselor).to eq Client.last.counselor
+    session = Survey::Session.last
+
+    expect(ActionMailer::Base.deliveries.first.body).to have_content new_client_survey_session_rating_scale_counselor_rating_url(session.client, session)
+
+    expect(session.counselor).to eq Client.last.counselor
 
     expect(page).to have_content 'Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.'
   end

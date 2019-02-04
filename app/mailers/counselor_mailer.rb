@@ -11,4 +11,10 @@ class CounselorMailer < ActionMailer::Base
 
     mail to: @counselor.email, subject: I18n.translate('emails.reset_token.subject', name: @counselor.name)
   end
+
+  def new_client_session(session_id)
+    @session = Survey::Session.find(session_id)
+
+    mail to: @session.counselor.email, subject: I18n.translate('emails.new_client_session.subject', identifier: @session.client.identifier)
+  end
 end

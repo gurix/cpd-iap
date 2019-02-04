@@ -1,0 +1,17 @@
+b Hallo #{@session.counselor.name},
+p #{@session.client.name} (#{@session.client.identifier}) hat soeben die Sitzung bewertet.
+
+p Bitte bewerten Sie diese Sitzung ihrerseits unter folgender Addresse:
+
+= link_to(new_client_survey_session_rating_scale_counselor_rating_url(@session.client, @session), new_client_survey_session_rating_scale_counselor_rating_url(@session.client, @session))
+
+hr
+
+p Unter folgender Adresse sehen Sie die letzten Sitzungen:
+= link_to counselor_client_url(@session.counselor.token, @session.client.token), counselor_client_url(@session.counselor.token, @session.client.token)
+p Unter folgender Adresse haben Sie Zufgriff auf all ihrer Klienten:
+= link_to counselor_url(@session.counselor.token), counselor_url(@session.counselor.token)
+p
+  i Aus Sicherheitsgründen verfällt dieser Link nach einer gewissen Zeit. Sie können sich aber jederzeit Ihren Zufgriff wiederherstellen unter:
+  br
+  = link_to new_reset_counselor_token_url, new_reset_counselor_token_url
