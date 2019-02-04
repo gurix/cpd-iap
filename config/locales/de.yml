@@ -47,7 +47,6 @@ de:
       caption: Session Rating Scale Sitzungen von %{name}
       dimensions: *SRS_DIMENSIONS
       counselor_rating: Einschätzung der Beratungsperson
-      counselor_rating_link: Einschätzung der Beratungsperson für die Sitzung vom %{date}
     edit:
       title: Meine Einstellungen anpassen
       please_choose_a_counselor: Bitte wählen Sie Ihre Beratungsperson

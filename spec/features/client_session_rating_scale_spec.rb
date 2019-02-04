@@ -38,7 +38,7 @@ feature 'session rating scale input' do
 
     session = Survey::Session.desc(:created_at).last
 
-    expect(ActionMailer::Base.deliveries.first.body).to have_content new_client_survey_session_rating_scale_counselor_rating_url(session.client, session)
+    expect(ActionMailer::Base.deliveries.last.body).to have_content new_client_survey_session_rating_scale_counselor_rating_url(session.client, session)
 
     expect(session.counselor).to eq Client.last.counselor
 
