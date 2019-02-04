@@ -36,7 +36,7 @@ feature 'session rating scale input' do
 
     expect { click_button 'Abschliessen' }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
-    session = Survey::Session.last
+    session = Survey::Session.desc(:created_at).last
 
     expect(ActionMailer::Base.deliveries.first.body).to have_content new_client_survey_session_rating_scale_counselor_rating_url(session.client, session)
 

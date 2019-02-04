@@ -37,7 +37,7 @@ module Survey
     end
 
     def predicted_amount_of_sessions
-      @client.sessions.map { |session| session&.counselor_rating&.session_number }.max.to_i + 1
+      @client.sessions.map { |session| session&.counselor_rating&.session_number }.compact.max.to_i + 1
     end
 
     def counselor_rating_params

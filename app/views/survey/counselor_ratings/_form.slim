@@ -24,7 +24,7 @@ hr
     legend = t('.intervention_contents_title')
     - t('.intervention_contents').each do |k,v|
       label.check_box
-        = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents.include?(k.to_s)}" }, k, nil
+        = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
         = "#{k}: #{v}"
     = f.input :intervention_contents_others, as: :text
 
