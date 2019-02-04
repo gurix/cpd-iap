@@ -1,5 +1,8 @@
 - title(t '.title')
 .sr-only = t('.slider_infos')
+
+= f.input :self_efficacy, as: :radio_buttons, collection: 1..10
+
 h2.caption= t('.dimensions.relationship')
 .row
   .col-xs-6

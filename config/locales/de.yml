@@ -205,6 +205,8 @@ de:
         client:
           identifier: Bitte geben Sie Ihre Klienten-Nummer an.
           name: Bitte geben Sie Ihren Namen und Vornamen an.
+        survey/session_rating_scale:
+          self_efficacy: "Ausgehend von den Erkenntnissen dieses Beratungstermins: Wie hoch ist Ihr Zutrauen, die nächsten Schritte umzusetzen auf einer Skala von 1-10?"
 
         survey/counselor_rating:
           session_number: Wievielter Termin?

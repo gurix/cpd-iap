@@ -14,11 +14,13 @@ module Survey
     field :approach_or_method, type: Integer, default: 50
     field :overall,            type: Integer, default: 50
     field :comment,            type: String
+    field :self_efficacy,      type: Integer
 
     validates :relationship,       presence: true
     validates :goals_and_topics,   presence: true
     validates :approach_or_method, presence: true
     validates :overall,            presence: true
+    validates :self_efficacy,      presence: true
 
     def send_email
       CounselorMailer.new_client_session(id).deliver
