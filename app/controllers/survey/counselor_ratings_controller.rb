@@ -11,7 +11,6 @@ module Survey
 
     def create
       @counselor_rating = CounselorRating.new counselor_rating_params.merge(session: @session)
-      flash[:now] = t('survey.counselor_ratings.saved') if
       flash_message_for(@counselor_rating.save)
       render :new
     end
