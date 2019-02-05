@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
 
         response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.counselor.name, session.counselor.email,
                                                  session.version, session.class.name, session.relationship, session.goals_and_topics,
-                                                 session.approach_or_method, session.overall, session.comment])
+                                                 session.approach_or_method, session.overall])
       end
     end
   ensure
@@ -76,6 +76,6 @@ class ClientsController < ApplicationController
     response.headers['Content-Disposition'] = 'attachment; filename="' + Time.now.strftime('%Y%m%d%H%M') + '.csv"'
     response.headers['Content-Type'] = 'text/csv'
     response.stream.write CSV.generate_line(%w[identifier created_at updated_at counselor_name counselor_email version scale
-                                               relationship goals_and_topics approach_or_method overall comment])
+                                               relationship goals_and_topics approach_or_method overall])
   end
 end

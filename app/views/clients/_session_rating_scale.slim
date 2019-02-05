@@ -5,12 +5,10 @@ table.table.table-responsive
     th width="5%"
       .sr-only= t('clients.show.count')
     th width="30%" = t('clients.show.date')
-    th = t('clients.show.comment')
     th
       .sr-only = t('.counselor_rating')
   - sessions.each_with_index do |session, index|
     tr
       td = index + 1
       td = l(session.created_at)
-      td = session.comment
       td = link_to(t('.counselor_rating'), [:new,session.client, session,:counselor_rating], class: 'btn btn-primary')

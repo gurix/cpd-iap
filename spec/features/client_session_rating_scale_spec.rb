@@ -27,14 +27,10 @@ feature 'session rating scale input' do
 
     expect(current_path).to eq new_client_survey_session_rating_scale_path(Client.last)
 
-    choose 'survey_session_rating_scale_self_efficacy_6'
-
     find("input[id$='survey_session_rating_scale_relationship']").set 10
     find("input[id$='survey_session_rating_scale_goals_and_topics']").set 20
     find("input[id$='survey_session_rating_scale_approach_or_method']").set 10
     find("input[id$='survey_session_rating_scale_overall']").set 20
-
-    find("textarea[id$='survey_session_rating_scale_comment']").set 'Teste den Test'
 
     expect { click_button 'Abschliessen' }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
