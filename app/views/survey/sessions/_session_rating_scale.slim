@@ -1,45 +1,27 @@
+javascript:
+  $(document).ready(function() {
+    var slider = $('input[type="range"]');
+    slider.on('click touchend mouseup', function(event) {
+      $('#survey_session_rating_scale_' + this.id).val(this.value);
+    });
+  });
+
 - title(t '.title')
 .sr-only = t('.slider_infos')
 
-h2.caption= t('.dimensions.relationship')
-.row
-  .col-xs-6
-     = t('.relationship.negative')
-  .col-xs-6.text-right
-    = t('.relationship.positive')
-.row
-  .col-xs-10.col-xs-offset-1
-    = f.input :relationship, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.relationship') }
-
-h2.caption= t('.dimensions.goals_and_topics')
-.row
-  .col-xs-6
-    = t('.goals_and_topics.negative')
-  .col-xs-6.text-right
-    = t('.goals_and_topics.positive')
-.row
-  .col-xs-10.col-xs-offset-1
-    = f.input :goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.goals_and_topics') }
-
-h2.caption= t('.dimensions.approach_or_method')
-.row
-  .col-xs-6
-    = t('.approach_or_method.negative')
-  .col-xs-6.text-right
-    = t('.approach_or_method.positive')
-.row
-  .col-xs-10.col-xs-offset-1
-    = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.approach_or_method') }
-
-h2.caption= t('.dimensions.overall')
-.row
-  .col-xs-6
-    = t('.overall.negative')
-  .col-xs-6.text-right
-    = t('.overall.positive')
-.row
-  .col-xs-10.col-xs-offset-1
-    = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1, input_html: { title: t('.dimensions.overall') }
+- %w[relationship goals_and_topics approach_or_method overall].each do |field|
+  h2.caption= t(".dimensions.#{field}")
+  .row
+    .col-xs-6
+       = t(".#{field}.negative")
+    .col-xs-6.text-right
+      = t(".#{field}.positive")
+  .row
+    .col-xs-10.col-xs-offset-1
+      = f.input field, as: :hidden
+      .form-group class="#{'has-error' unless f.object.errors[field].blank?}"
+        = range_field_tag(field.to_s, f.object[field], min: 0, max: 100, step: 1, title: t(".dimensions.#{field}"), class: 'form-control range' )
+        span.help-block= f.object.errors[field].first
 
 .form-group
   br

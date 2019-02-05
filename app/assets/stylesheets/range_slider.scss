@@ -1,8 +1,10 @@
- .range {
-  .form-control {
-    border: none;
-    box-shadow: none;
-  }
+input[type=range] {
+  border: none;
+  box-shadow: none;
+}
+
+.has-error .form-control {
+  box-shadow: none;
 }
 
 /* IE 11 Definitions */
