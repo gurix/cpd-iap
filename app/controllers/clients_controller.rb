@@ -14,8 +14,8 @@ class ClientsController < ApplicationController
         next if session.counselor.blank?
 
         response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.counselor.name, session.counselor.email,
-                                                 session.version, session.class.name, session.relationship, session.goals_and_topics,
-                                                 session.approach_or_method, session.overall])
+                                                 session.version, session.class.first_name, session.class.last_name, session.relationship,
+                                                 session.goals_and_topics, session.approach_or_method, session.overall])
       end
     end
   ensure
@@ -56,7 +56,7 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:identifier, :name, :counselor_id, :second_step)
+    params.require(:client).permit(:identifier, :first_name, :last_name, :counselor_id, :second_step)
   end
 
   # Set the path depending on kind of survey used for last survey

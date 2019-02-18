@@ -203,7 +203,8 @@ de:
           name: Name der Beratungsperson
         client:
           identifier: Bitte geben Sie Ihre Klienten-Nummer an.
-          name: Bitte geben Sie Ihren Namen und Vornamen an.
+          first_name: Bitte geben Sie Ihren Vornamen an.
+          last_name: Bitte geben Sie Ihren Nachnamen an.
 
         survey/counselor_rating:
           session_number: Wievielter Termin?

@@ -4,16 +4,21 @@ class Client
   include Tokenable
 
   field :identifier,    type: String
-  field :name,          type: String
+  field :first_name,    type: String
+  field :last_name,     type: String
 
   validates :identifier, presence: true
   validates :identifier, uniqueness: true
-  validates :name, presence: true, unless: 'identifier.blank?'
+  validates :first_name, :last_name, presence: true, unless: 'identifier.blank?'
 
   has_many :sessions, dependent: :destroy, inverse_of: :client, class_name: 'Survey::Session'
   belongs_to :counselor, inverse_of: :clients
 
   attr_accessor :second_step
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 
   def last_session
     sessions.asc(:created_at).last

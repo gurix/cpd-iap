@@ -19,19 +19,26 @@ feature 'session rating scale input', js: true do
 
     expect(page).to_not have_content 'Bitte geben Sie Ihre Klienten-Nummer an'
 
-    expect(page).to have_content 'Bitte geben Sie Ihren Namen und Vornamen an'
+    expect(page).to have_content 'Bitte geben Sie Ihren Vornamen an'
+    expect(page).to have_content 'Bitte geben Sie Ihren Nachnamen an'
     expect(page).to_not have_content 'muss ausgefüllt werden'
 
     click_button 'Weiter'
 
     expect(page).to have_content 'muss ausgefüllt werden'
 
-    fill_in 'Bitte geben Sie Ihren Namen und Vornamen an', with: 'Hanf Ueli'
+    fill_in 'Bitte geben Sie Ihren Vornamen an', with: 'Hanf'
+    fill_in 'Bitte geben Sie Ihren Nachnamen an', with: 'Ueli'
+
     select 'Dr. Paul Weston', from: 'client_counselor_id'
 
     expect { click_button 'Weiter' }.to change { Client.count }.by(1)
 
-    expect(current_path).to eq new_client_survey_session_rating_scale_path(Client.last)
+    client = Client.last
+
+    expect(current_path).to eq new_client_survey_session_rating_scale_path(client)
+
+    expect(client.name).to eq 'Hanf Ueli'
 
     range_select('relationship', 10)
     range_select('goals_and_topics', 20)
@@ -53,7 +60,7 @@ feature 'session rating scale input', js: true do
 
     expect(ActionMailer::Base.deliveries.last.body).to have_content new_client_survey_session_rating_scale_counselor_rating_url(session.client, session)
 
-    expect(session.counselor).to eq Client.last.counselor
+    expect(session.counselor).to eq client.counselor
 
     expect(page).to have_content 'Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.'
   end
