@@ -172,11 +172,11 @@ de:
 
         crq_title: Wie intensiv haben Sie mit dem Klienten/der Klientin über folgende Aspekte gesprochen?
         crq_scale:
-          0: überhaupt nicht
-          1: kaum
-          2: teilweise
-          3: viel
           4: sehr viel
+          3: viel
+          2: teilweise
+          1: kaum
+          0: überhaupt nicht
 
         relationship:
           positive: Ich habe den Klienten gehört, verstanden und respektiert.
