@@ -62,6 +62,6 @@ feature 'session rating scale input', js: true do
 
     expect(session.counselor).to eq client.counselor
 
-    expect(page).to have_content 'Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.'
+    expect(page).to have_content 'Vielen Dank. Ihre Bewertung wurde erfolgreich gespeichert.'
   end
 end

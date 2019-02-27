@@ -138,7 +138,7 @@ de:
 
       create:
         title: Bewertung gespeichert
-        session_suceessfully_created: Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.
+        session_suceessfully_created: Vielen Dank. Ihre Bewertung wurde erfolgreich gespeichert.
         new_session: Neue Bewertung erfassen
 
     counselor_ratings:
