@@ -52,10 +52,10 @@ de:
       please_choose_a_counselor: Bitte wählen Sie Ihre Beratungsperson
       info_title: Diese Einstellungen betreffen den Klienten mit der Nummer
       info_body: Bitte überprüfen Sie diese Nummer nochmals, bevor Sie die Anpassungen durchführen.
-      info_exit: Bei falscher Klienten-Nummer, melden Sie sich nochmals neu an.
+      info_exit: Bei falscher Dossier-Nummer, melden Sie sich nochmals neu an.
     new:
       title: Sitzung bewerten
-      identifier_hint: Die Klienten-Nummer wird Ihnen durch Ihre Beratungsperson bekannt gegeben.
+      identifier_hint: Die Dossier-Nummer wird Ihnen durch Ihre Beratungsperson bekannt gegeben.
       access_for_counselors: Zugang für Beratende
       please_choose_a_counselor: Bitte wählen Sie Ihre Beratungsperson aus.
       ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
@@ -202,7 +202,7 @@ de:
           email: E-Mail
           name: Name der Beratungsperson
         client:
-          identifier: Bitte geben Sie Ihre Klienten-Nummer an.
+          identifier: Bitte geben Sie Ihre Dossier-Nummer an.
           first_name: Bitte geben Sie Ihren Vornamen an.
           last_name: Bitte geben Sie Ihren Nachnamen an.
 

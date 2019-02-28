@@ -13,11 +13,11 @@ feature 'session rating scale input', js: true do
 
     visit new_client_path
 
-    fill_in 'Bitte geben Sie Ihre Klienten-Nummer an.', with: 'test'
+    fill_in 'Bitte geben Sie Ihre Dossier-Nummer an.', with: 'test'
 
     click_button 'Weiter'
 
-    expect(page).to_not have_content 'Bitte geben Sie Ihre Klienten-Nummer an'
+    expect(page).to_not have_content 'Bitte geben Sie Ihre Dossier-Nummer an'
 
     expect(page).to have_content 'Bitte geben Sie Ihren Vornamen an'
     expect(page).to have_content 'Bitte geben Sie Ihren Nachnamen an'

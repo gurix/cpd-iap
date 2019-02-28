@@ -8,7 +8,7 @@ feature 'client' do
 
     visit new_client_path
 
-    fill_in 'Bitte geben Sie Ihre Klienten-Nummer an.', with: 'test'
+    fill_in 'Bitte geben Sie Ihre Dossier-Nummer an.', with: 'test'
 
     click_button 'Weiter'
 
@@ -16,7 +16,7 @@ feature 'client' do
 
     visit new_client_path
 
-    fill_in 'Bitte geben Sie Ihre Klienten-Nummer an.', with: 'TEST'
+    fill_in 'Bitte geben Sie Ihre Dossier-Nummer an.', with: 'TEST'
 
     click_button 'Weiter'
 
