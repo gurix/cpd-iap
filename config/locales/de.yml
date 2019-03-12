@@ -156,9 +156,8 @@ de:
           6: Kompetenzen erarbeitet
           7: Persönliche Leistungen und Erfolge reflektiert
           8: Rollenmodelle/Vorbilder besprochen (z.B. Personen, die eine ähnliche Herausforderung erfolgreich bewältigt haben)
-          9: (fixe) Konzepte, Überzeugungen, Glaubenssätze, Fehlannahmen aufgedeckt, kritisch geprüft im Sinne einer kognitiven Umstrukturierung gemacht
-          10: Techniken der psychologischen Gesprächsführung eingesetzt (z.B. Skalieren, zirkuläres Fragen, Paraphrasieren, Spiegeln und Validieren von Emotionen, Konkretisieren ("Was macht es aus?")
-          11: Techniken der psychologischen Gesprächsführung eingesetzt (z.B. Skalieren, zirkuläres Fragen, Paraphrasieren, Spiegeln und Validieren von Emotionen, Konkretisieren ("Was macht es aus?")
+          9: (fixe) Konzepte, Überzeugungen, Glaubenssätze, Fehlannahmen aufgedeckt, kritisch geprüft im Sinne einer kognitiven Umstrukturierung
+          10: Techniken der psychologischen Gesprächsführung eingesetzt (z.B. Skalieren, zirkuläres Fragen, Paraphrasieren, Spiegeln und Validieren von Emotionen, Konkretisieren "Was macht es aus?")
           12: Berufs- und Aus-/Weiterbildungsinformationen Informationen vermittelt (zu Arbeitsmarkt, Berufsbildern, Studien- und Weiterbildungsgängen)
           13: Gemeinsam Berufs- und Weiterbildungsoptionen erkundet/besprochen
           14: Empfehlungen für Websiten oder Literatur abgegeben
@@ -213,5 +212,5 @@ de:
           intervention_contents_others: Andere Interventionen/Aktivitäten
           crq_knowledge_and_skills: Vorhandene oder benötigte Kenntnisse und Fähigkeiten für berufliche Möglichkeiten?
           crq_motivation: Motivation und Ziele für berufliche Möglichkeiten?
-          crq_environment: Einschränkungen oder vorhandene Unterstüzung im privaten oder beruflichen Umfeld?
+          crq_environment: Einschränkungen oder vorhandene Unterstützung im privaten oder beruflichen Umfeld?
           crq_activity: Verschiedene benötigte Aktivitäten zur Gestaltung der eigenen Laufbahn?
