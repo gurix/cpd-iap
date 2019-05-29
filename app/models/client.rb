@@ -9,7 +9,7 @@ class Client
 
   validates :identifier, presence: true
   validates :identifier, uniqueness: true
-  validates :first_name, :last_name, presence: true, unless: 'identifier.blank?'
+  validates :first_name, :last_name, presence: true, unless: proc { |client| client.identifier.blank? }
 
   has_many :sessions, dependent: :destroy, inverse_of: :client, class_name: 'Survey::Session'
   belongs_to :counselor, inverse_of: :clients
