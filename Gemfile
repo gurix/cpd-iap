@@ -9,7 +9,7 @@ gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Sass-powered version of Bootstrap 3
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 # Use slim as default language
 gem 'slim-rails'
 
