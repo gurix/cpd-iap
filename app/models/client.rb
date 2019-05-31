@@ -2,6 +2,7 @@ class Client
   include Mongoid::Document
   include Mongoid::Timestamps
   include Tokenable
+  include Exportable
 
   field :identifier,    type: String
   field :first_name,    type: String

@@ -3,19 +3,20 @@ require 'csv'
 class ClientsController < ApplicationController
   include ActionController::Live
 
-  before_action :http_basic_auth, :csv_header, only: :index
+  before_action :http_basic_auth, only: :index
   before_action :find_or_initialize_client, only: :create
   before_action :load_counselors # Loads the list with all available counselors
   before_action :load_client, only: %i[edit update]
 
   def index
+    csv_header
     Client.each do |client|
       client.sessions.each do |session|
         next if session.counselor.blank?
 
-        response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.counselor.name, session.counselor.email,
-                                                 session.version, session.class.first_name, session.class.last_name, session.relationship,
-                                                 session.goals_and_topics, session.approach_or_method, session.overall])
+        counselor_rating = session.counselor_rating&.cols || [nil].cycle(Survey::CounselorRating.colnames.size).to_a
+        response.stream.write CSV.generate_line(client.cols +
+          session.cols + counselor_rating)
       end
     end
   ensure
@@ -75,7 +76,6 @@ class ClientsController < ApplicationController
   def csv_header
     response.headers['Content-Disposition'] = 'attachment; filename="' + Time.now.strftime('%Y%m%d%H%M') + '.csv"'
     response.headers['Content-Type'] = 'text/csv'
-    response.stream.write CSV.generate_line(%w[identifier created_at updated_at counselor_name counselor_email version scale
-                                               relationship goals_and_topics approach_or_method overall])
+    response.stream.write CSV.generate_line(Client.colnames + Survey::SessionRatingScale.colnames + Survey::CounselorRating.colnames)
   end
 end

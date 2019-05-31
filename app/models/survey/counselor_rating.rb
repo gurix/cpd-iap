@@ -2,6 +2,7 @@ module Survey
   class CounselorRating
     include Mongoid::Document
     include Mongoid::Timestamps
+    include Exportable
 
     # Find fields by regexp so we do not have to write down every field i.e for validation
     def self.find_fields(search_pattern)
