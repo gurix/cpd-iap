@@ -20,3 +20,7 @@ spec/examples.txt
 # Ignore ruby version
 .ruby-version
 .env*
+.Rproj.user
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

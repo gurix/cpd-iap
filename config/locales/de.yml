@@ -201,11 +201,32 @@ de:
           email: E-Mail
           name: Name der Beratungsperson
         client:
+          _id: ClientID
           identifier: Bitte geben Sie Ihre Dossier-Nummer an.
           first_name: Bitte geben Sie Ihren Vornamen an.
           last_name: Bitte geben Sie Ihren Nachnamen an.
+          created_at: Klient erstellt am
+          updated_at: Klient bearbeitet am
+          token_generated_at: Token erstellt am
+          counselor_id: CounselorID
+
+        survey/session:
+          _id: SessionID
+          created_at: Sitzung erstellt am
+          updated_at: Sitzung bearbeitet am
+          client_id: ClientID
+          counselor_id: CounselorID
+          _type: Type
+          relationship: SRS Beziehung
+          goals_and_topics: SRS Ziele und Themen
+          approach_or_method: SRS Herangehensweise
+          overall: SRS Insgesamt
 
         survey/counselor_rating:
+          _id: CounselorRatingID
+          session_id: SessionID
+          created_at: Bewertung erstellt am
+          updated_at: Bewertung bearbeitet am
           session_number: Wievielter Termin?
           session_date: Zeitpunkt an dem die Sitzung stattgefunden hat
           session_duration: Dauer der Sitzung in Minuten
@@ -214,3 +235,7 @@ de:
           crq_motivation: Motivation und Ziele für berufliche Möglichkeiten?
           crq_environment: Einschränkungen oder vorhandene Unterstützung im privaten oder beruflichen Umfeld?
           crq_activity: Verschiedene benötigte Aktivitäten zur Gestaltung der eigenen Laufbahn?
+          counselor_relationship: SRS Beratungsperson Beziehung
+          counselor_goals_and_topics: SRS Beratungsperson Ziele und Themen
+          counselor_approach_or_method: SRS Beratungsperson Herangehensweise
+          counselor_overall: SRS Beratungsperson Insgesamt

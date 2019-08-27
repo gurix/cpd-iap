@@ -9,6 +9,9 @@ module Survey
       fields.keys.select { |field_name| field_name =~ search_pattern }
     end
 
+    def self.intervention_contents_fields
+      I18n.t('survey.counselor_ratings.form.intervention_contents')
+    end
     belongs_to :session, inverse_of: :counselor_rating
 
     field :session_number,   type: Integer
@@ -40,6 +43,12 @@ module Survey
 
     find_fields(/^counselor/).map do |field_name|
       validates field_name, presence: true
+    end
+
+    def intervention_contents_cols
+      self.class.intervention_contents_fields.keys.map do |key|
+        intervention_contents&.include? key.to_s
+      end
     end
   end
 end

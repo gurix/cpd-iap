@@ -14,9 +14,7 @@ class ClientsController < ApplicationController
       client.sessions.each do |session|
         next if session.counselor.blank?
 
-        counselor_rating = session.counselor_rating&.cols || [nil].cycle(Survey::CounselorRating.colnames.size).to_a
-        response.stream.write CSV.generate_line(client.cols +
-          session.cols + counselor_rating)
+        response.stream.write CSV.generate_line(client.cols + session.cols + counselor_rating(session) + counselor_rating_intervention_contents(session))
       end
     end
   ensure
@@ -52,6 +50,18 @@ class ClientsController < ApplicationController
 
   private
 
+  # counselor_rating columns or an equivalent nil array if there is no rating
+  def counselor_rating(session)
+    session.counselor_rating&.cols(%w[intervention_contents]) ||
+      [nil].cycle(Survey::CounselorRating.colnames(%w[intervention_contents]).size).to_a
+  end
+
+  # interventions as columns or an equivalent nil array if there is no rating
+  def counselor_rating_intervention_contents(session)
+    session.counselor_rating&.intervention_contents_cols ||
+      [nil].cycle(Survey::CounselorRating.intervention_contents_fields.size).to_a
+  end
+
   def find_or_initialize_client
     @client = Client.find_or_initialize_by(identifier: client_params[:identifier].downcase)
   end
@@ -76,6 +86,8 @@ class ClientsController < ApplicationController
   def csv_header
     response.headers['Content-Disposition'] = 'attachment; filename="' + Time.now.strftime('%Y%m%d%H%M') + '.csv"'
     response.headers['Content-Type'] = 'text/csv'
-    response.stream.write CSV.generate_line(Client.colnames + Survey::SessionRatingScale.colnames + Survey::CounselorRating.colnames)
+    response.stream.write CSV.generate_line(Client.colnames + Survey::SessionRatingScale.colnames +
+    Survey::CounselorRating.colnames(['intervention_contents']) +
+    Survey::CounselorRating.intervention_contents_fields.values)
   end
 end
