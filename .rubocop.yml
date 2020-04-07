@@ -5,14 +5,14 @@ AllCops:
     - 'script/**/*'
     - bin/**
     - spec/spec_helper.rb
-Documentation:
+Style/Documentation:
   Enabled: false
-LineLength:
+Metrics/LineLength:
   Enabled: true
   Max: 160
-AbcSize:
+Metrics/AbcSize:
   Enabled: false
-FrozenStringLiteralComment:
+Style/FrozenStringLiteralComment:
   Enabled: false
 Metrics/BlockLength:
   ExcludedMethods:
