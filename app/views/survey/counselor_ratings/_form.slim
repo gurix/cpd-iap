@@ -13,6 +13,7 @@ hr
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
   = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)
+  = f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)
   fieldset
     legend = t('.crq_title')
     = f.input :crq_knowledge_and_skills, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first

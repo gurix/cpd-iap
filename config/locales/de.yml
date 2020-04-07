@@ -229,6 +229,7 @@ de:
           updated_at: Bewertung bearbeitet am
           session_number: Wievielter Termin?
           session_date: Zeitpunkt an dem die Sitzung stattgefunden hat
+          online_session: Beratung fand online statt
           session_duration: Dauer der Sitzung in Minuten
           intervention_contents_others: Andere Interventionen/Aktivitäten
           crq_knowledge_and_skills: Vorhandene oder benötigte Kenntnisse und Fähigkeiten für berufliche Möglichkeiten?

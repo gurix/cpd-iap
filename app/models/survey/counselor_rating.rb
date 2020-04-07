@@ -17,6 +17,7 @@ module Survey
     field :session_number,   type: Integer
     field :session_duration, type: Integer
     field :session_date,     type: Time
+    field :online_session,   type: Boolean, default: false
 
     find_fields(/^session/).map do |field_name|
       validates field_name, presence: true

@@ -32,6 +32,8 @@ feature 'counselor rating input' do
     find("input[id$='survey_counselor_rating_counselor_approach_or_method']").set 30
     find("input[id$='survey_counselor_rating_counselor_overall']").set 40
 
+    check 'Beratung fand online statt'
+
     click_button 'Speichern'
 
     expect(page).to have_content 'Ihre Eingabe wurde gespeichert.'
@@ -41,6 +43,7 @@ feature 'counselor rating input' do
     expect(counselor_rating.session_number).to eq 3
     expect(counselor_rating.session_duration).to eq 60
     expect(counselor_rating.session_date).to eq '2017-03-07 22:11:00.000000000 +0000'
+    expect(counselor_rating.online_session).to eq true
 
     expect(counselor_rating.crq_knowledge_and_skills).to eq 0
     expect(counselor_rating.crq_motivation).to eq 1
