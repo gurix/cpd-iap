@@ -122,6 +122,7 @@ de:
         save: Abschliessen
         slider_infos: Im Folgenden können Sie die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
         dimensions: *SRS_DIMENSIONS
+        consultation_date: Beratungsdatum
         relationship:
           negative: Ich fühlte mich nicht gehört, verstanden und respektiert.
           positive: Ich fühlte mich gehört, verstanden und respektiert.

@@ -13,11 +13,13 @@ module Survey
     field :goals_and_topics,   type: Integer
     field :approach_or_method, type: Integer
     field :overall,            type: Integer
+    field :consultation_date,  type: String
 
     validates :relationship,       presence: true
     validates :goals_and_topics,   presence: true
     validates :approach_or_method, presence: true
     validates :overall,            presence: true
+    validates :consultation_date,  presence: true
 
     def send_email
       CounselorMailer.new_client_session(id).deliver

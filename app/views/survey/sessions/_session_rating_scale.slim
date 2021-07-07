@@ -9,6 +9,13 @@ javascript:
 - title(t '.title')
 .sr-only = t('.slider_infos')
 
+.row
+  .col-xs-6
+      label= t('.consultation_date')
+      = f.date_field :consultation_date, include_blank: true, label: t('.consultation_date')
+      .form-group class="#{'has-error' unless f.object.errors['consultation_date'].blank?}"
+        span.help-block= f.object.errors['consultation_date'].first
+
 - %w[relationship goals_and_topics approach_or_method overall].each do |field|
   h2.caption= t(".dimensions.#{field}")
   .row
