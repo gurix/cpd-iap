@@ -1,3 +1,20 @@
+javascript:
+  function showHidePrimaryGoals() {
+    if ($('#survey_counselor_rating_session_number').val() == 1) {
+      $('.primary-goals').show();
+    } else {
+      $('.primary-goals').hide();
+    };
+  }
+  $(document).ready(function() {
+    $('.primary-goals').hide();
+    showHidePrimaryGoals();
+    $('#survey_counselor_rating_session_number').on('change', function() {
+      showHidePrimaryGoals();
+    });
+  });
+
+
 h1.hidden = title "Bewertung der Sitzung mit #{@client.name} (#{@client.identifier}) vom #{l(@session.created_at, format: :short)}"
 
 dl
@@ -22,6 +39,13 @@ hr
     hr
 
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
+  .primary-goals
+    fieldset
+      legend Welches sind die drei Hauptziele, welche in der Beratung verfolgt werden?
+      = f.input :goal_1, as: :text
+      = f.input :goal_2, as: :text
+      = f.input :goal_3, as: :text
+
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
   = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)
   = f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)

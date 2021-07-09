@@ -49,6 +49,11 @@ module Survey
     field :age,                 type: Integer
     field :gender,              type: String
 
+    # Primary goals
+    field :goal_1, type: String
+    field :goal_2, type: String
+    field :goal_3, type: String
+
     find_fields(/^counselor/).map do |field_name|
       validates field_name, presence: true
     end
