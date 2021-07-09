@@ -9,7 +9,18 @@ dl
 
 hr
 
+
 = simple_form_for(@counselor_rating, url: client_survey_session_rating_scale_counselor_rating_path) do |f|
+  - if @counselor_rating.first_session?(@client)
+    fieldset
+      legend Persönliche Angaben
+      = f.input :consultation_code, as: :string
+      = f.input :years_of_experience, as: :integer
+      = f.input :age, as: :integer
+      = f.input :gender, collection: Survey::CounselorRating.gender_options
+
+    hr
+
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
   = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)

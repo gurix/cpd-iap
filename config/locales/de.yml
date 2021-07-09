@@ -195,6 +195,10 @@ de:
           negative: In der heutigen Sitzung hat etwas gefehlt.
 
         srs_title: Bitte bewerten Sie die heutige Sitzung.
+      gender:
+        male: männlich
+        female: weiblich
+        other: andere
 
   mongoid:
      attributes:
@@ -241,3 +245,7 @@ de:
           counselor_goals_and_topics: SRS Beratungsperson Ziele und Themen
           counselor_approach_or_method: SRS Beratungsperson Herangehensweise
           counselor_overall: SRS Beratungsperson Insgesamt
+          consultation_code: Bitte geben Sie Ihren Beratungscode ein
+          years_of_experience: Über wie viele Jahre Erfahrung verfügen Sie in der Laufbahnberatung?
+          age: Bitte geben Sie Ihr Alter an
+          gender: Bitte geben Sie Ihr Geschlecht an

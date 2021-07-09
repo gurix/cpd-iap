@@ -13,6 +13,7 @@ module Survey
       I18n.t('survey.counselor_ratings.form.intervention_contents')
     end
     belongs_to :session, inverse_of: :counselor_rating
+    belongs_to :client, inverse_of: :counselor_rating
 
     field :session_number,   type: Integer
     field :session_duration, type: Integer
@@ -42,6 +43,12 @@ module Survey
     field :counselor_approach_or_method,  type: Integer
     field :counselor_overall,             type: Integer
 
+    # Counselor characteristics
+    field :consultation_code,   type: String
+    field :years_of_experience, type: Integer
+    field :age,                 type: Integer
+    field :gender,              type: String
+
     find_fields(/^counselor/).map do |field_name|
       validates field_name, presence: true
     end
@@ -50,6 +57,18 @@ module Survey
       self.class.intervention_contents_fields.keys.map do |key|
         intervention_contents&.include? key.to_s
       end
+    end
+
+    def first_session?(client)
+      Survey::CounselorRating.where(client_id: client.id).count.zero?
+    end
+
+    def self.gender_options
+      [
+        [I18n.t('.survey.counselor_ratings.gender.female'), 'female'],
+        [I18n.t('.survey.counselor_ratings.gender.male'), 'male'],
+        [I18n.t('.survey.counselor_ratings.gender.other'), 'other']
+      ]
     end
   end
 end
