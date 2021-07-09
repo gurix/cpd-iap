@@ -15,10 +15,12 @@ module Survey
     belongs_to :session, inverse_of: :counselor_rating
     belongs_to :client, inverse_of: :counselor_rating
 
-    field :session_number,   type: Integer
-    field :session_duration, type: Integer
-    field :session_date,     type: Time
-    field :online_session,   type: Boolean, default: false
+    field :session_number,       type: Integer
+    field :session_duration,     type: Integer
+    field :session_date,         type: Time
+    field :online_session,       type: Boolean, default: false
+    field :cancelled_session,    type: Boolean, default: false
+    field :cancellation_reasion, type: String
 
     find_fields(/^session/).map do |field_name|
       validates field_name, presence: true
@@ -54,6 +56,10 @@ module Survey
     field :goal_2, type: String
     field :goal_3, type: String
 
+    # last session info
+    field :last_session, type: Boolean
+    field :goals_achieved, type: String
+
     find_fields(/^counselor/).map do |field_name|
       validates field_name, presence: true
     end
@@ -74,6 +80,10 @@ module Survey
         [I18n.t('.survey.counselor_ratings.gender.male'), 'male'],
         [I18n.t('.survey.counselor_ratings.gender.other'), 'other']
       ]
+    end
+
+    def self.goals(client_id)
+      Survey::CounselorRating.where(client_id: client_id, session_number: 1).pluck(:goal_1, :goal_2, :goal_3).flatten!
     end
   end
 end

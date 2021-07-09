@@ -6,11 +6,31 @@ javascript:
       $('.primary-goals').hide();
     };
   }
+
+  function showHideLastSessionQuestions() {
+    $('.last-session-info').toggle($('#survey_counselor_rating_last_session').is(':checked'));
+  }
+
+  function showHideCancellationReasion() {
+    $('.cancellation-info').toggle($('#survey_counselor_rating_cancelled_session').is(':checked'));
+  }
+
   $(document).ready(function() {
-    $('.primary-goals').hide();
+    // Initial state
     showHidePrimaryGoals();
+    showHideCancellationReasion();
+    showHideLastSessionQuestions();
+
     $('#survey_counselor_rating_session_number').on('change', function() {
       showHidePrimaryGoals();
+    });
+
+    $('#survey_counselor_rating_last_session').on('change', function() {
+      showHideLastSessionQuestions();
+    });
+
+    $('#survey_counselor_rating_cancelled_session').on('change', function() {
+      showHideCancellationReasion();
     });
   });
 
@@ -46,10 +66,27 @@ hr
       = f.input :goal_1, as: :text
       = f.input :goal_2, as: :text
       = f.input :goal_3, as: :text
-
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
   = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)
-  = f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)
+  fieldset
+    = f.input :last_session, as: :boolean
+    .last-session-info
+        p  Sie haben zusammen mit Ihrer Klientin/Ihrem Klienten folgende Ziele festgelegt.
+        p
+        ul
+          - Survey::CounselorRating.goals(@client.id).each do |goal|
+            li= goal
+        p Inwieweit schätzen Sie ein, dass diese Ziele in der Zwischenzeit erreicht wurden?
+        p= f.input :goals_achieved, as: :text
+
+  fieldset= f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)
+
+  fieldset
+    p= f.input :cancelled_session, as: :boolean
+    .cancellation-info
+      = f.input :cancellation_reasion, as: :text
+
+
   fieldset
     legend = t('.crq_title')
     = f.input :crq_knowledge_and_skills, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
