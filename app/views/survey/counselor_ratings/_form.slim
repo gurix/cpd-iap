@@ -95,10 +95,26 @@ hr
 
   fieldset
     legend = t('.intervention_contents_title')
-    - t('.intervention_contents').each do |k,v|
-      label.check_box
-        = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
-        = "#{k}: #{v}"
+    fieldset
+      legend Qualitativ
+      - t('.intervention_contents.qualitative').each do |k,v|
+        label.check_box
+          = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
+          = "#{v}"
+    fieldset
+      legend Quantitativ
+      - t('.intervention_contents.quantitative').each do |k,v|
+        label.check_box
+          = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
+          = "#{v}"
+
+    fieldset
+      legend Coaching
+      - t('.intervention_contents.coaching').each do |k,v|
+        label.check_box
+          = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
+          = "#{v}"
+
     = f.input :intervention_contents_others, as: :text
 
   fieldset
