@@ -28,6 +28,7 @@ hr
 
 
 = simple_form_for(@counselor_rating, url: client_survey_session_rating_scale_counselor_rating_path) do |f|
+  = f.input :client_id, as: :hidden
   - if @counselor_rating.first_session?(@client)
     fieldset
       legend Persönliche Angaben

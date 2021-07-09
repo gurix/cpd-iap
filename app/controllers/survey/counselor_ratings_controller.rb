@@ -6,6 +6,7 @@ module Survey
       return redirect_to edit_client_survey_session_rating_scale_counselor_rating_path(@client, @session) if @session.counselor_rating
 
       @counselor_rating = CounselorRating.new(session_date: @session.created_at,
+                                              client_id: @client.id,
                                               session_number: predicted_amount_of_sessions)
     end
 
