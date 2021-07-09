@@ -20,7 +20,7 @@ module Survey
     field :session_date,         type: Time
     field :online_session,       type: Boolean, default: false
     field :cancelled_session,    type: Boolean, default: false
-    field :cancellation_reasion, type: String
+    field :cancellation_reason,  type: String
 
     find_fields(/^session/).map do |field_name|
       validates field_name, presence: true

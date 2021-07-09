@@ -51,7 +51,7 @@ hr
   = f.input :client_id, as: :hidden
   - if @counselor_rating.first_session?(@client)
     fieldset
-      legend Persönliche Angaben
+      legend= t('.personal_info')
       = f.input :consultation_code, as: :string
       = f.input :years_of_experience, as: :integer
       = f.input :age, as: :integer
@@ -62,7 +62,7 @@ hr
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
   .primary-goals
     fieldset
-      legend Welches sind die drei Hauptziele, welche in der Beratung verfolgt werden?
+      legend= t('.goals_info')
       = f.input :goal_1, as: :text
       = f.input :goal_2, as: :text
       = f.input :goal_3, as: :text
@@ -71,12 +71,11 @@ hr
   fieldset
     = f.input :last_session, as: :boolean
     .last-session-info
-        p  Sie haben zusammen mit Ihrer Klientin/Ihrem Klienten folgende Ziele festgelegt.
+        p= t('.achieved_goals_info')
         p
         ul
-          - Survey::CounselorRating.goals(@client.id).each do |goal|
+          - Survey::CounselorRating.goals(@client.id)&.each do |goal|
             li= goal
-        p Inwieweit schätzen Sie ein, dass diese Ziele in der Zwischenzeit erreicht wurden?
         p= f.input :goals_achieved, as: :text
 
   fieldset= f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)
@@ -84,7 +83,7 @@ hr
   fieldset
     p= f.input :cancelled_session, as: :boolean
     .cancellation-info
-      = f.input :cancellation_reasion, as: :text
+      = f.input :cancellation_reason, as: :text
 
 
   fieldset

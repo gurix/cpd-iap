@@ -195,6 +195,10 @@ de:
           negative: In der heutigen Sitzung hat etwas gefehlt.
 
         srs_title: Bitte bewerten Sie die heutige Sitzung.
+        goals_info: Welches sind die drei Hauptziele, welche in der Beratung verfolgt werden?
+        personal_info: Persönliche Angaben
+        achieved_goals_info: Sie haben zusammen mit Ihrer Klientin/Ihrem Klienten folgende Ziele festgelegt.
+
       gender:
         male: männlich
         female: weiblich
@@ -252,3 +256,7 @@ de:
           goal_1: Erstes Ziel
           goal_2: Zweites Ziel
           goal_3: Drittes Ziel
+          last_session: Letzter Termin?
+          cancelled_session: Kam es zu einem Abbruch der Beratung?
+          cancellation_reason: Grund des Abbruchs?
+          goals_achieved: Inwieweit schätzen Sie ein, dass diese Ziele in der Zwischenzeit erreicht wurden?
