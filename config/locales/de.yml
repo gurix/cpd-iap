@@ -220,6 +220,15 @@ de:
         personal_info: Persönliche Angaben
         achieved_goals_info: Sie haben zusammen mit Ihrer Klientin/Ihrem Klienten folgende Ziele festgelegt.
 
+        type_of_counseling:
+          iv: Im Auftrag der IV
+          company_organisation: Im Auftrag eines Unternehmens / einer Organisation
+          self_paying: Selbstzahler:in
+
+        yes_no:
+          yes: Ja
+          no: Nein
+
       gender:
         male: männlich
         female: weiblich
@@ -281,3 +290,5 @@ de:
           cancelled_session: Kam es zu einem Abbruch der Beratung?
           cancellation_reason: Grund des Abbruchs?
           goals_achieved: Inwieweit schätzen Sie ein, dass diese Ziele in der Zwischenzeit erreicht wurden?
+          change_of_counselor: Hat im Laufe des Beratungsprozesses ein Berater:innenwechsel stattgefunden?
+          type_of_counseling: Um welche Form der Laufbahnberatung handelt es sich?

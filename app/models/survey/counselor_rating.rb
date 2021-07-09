@@ -57,8 +57,10 @@ module Survey
     field :goal_3, type: String
 
     # last session info
-    field :last_session, type: Boolean
-    field :goals_achieved, type: String
+    field :last_session,        type: Boolean
+    field :goals_achieved,      type: String
+    field :change_of_counselor, type: String
+    field :type_of_counseling,  type: String
 
     find_fields(/^counselor/).map do |field_name|
       validates field_name, presence: true

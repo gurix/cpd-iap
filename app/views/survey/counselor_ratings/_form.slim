@@ -71,12 +71,19 @@ hr
   fieldset
     = f.input :last_session, as: :boolean
     .last-session-info
-        p= t('.achieved_goals_info')
-        p
+      p= t('.achieved_goals_info')
+      p
         ul
-          - Survey::CounselorRating.goals(@client.id)&.each do |goal|
+        - Survey::CounselorRating.goals(@client.id).each do |goal|
+          -if goal.present?
             li= goal
-        p= f.input :goals_achieved, as: :text
+
+      p= f.input :goals_achieved, as: :text
+      fieldset
+        p= f.input :type_of_counseling, collection: t('.type_of_counseling').map{ |k,v| [v, k] }
+        p= f.input :change_of_counselor, collection: t('.yes_no').map{ |k,v| [v, k] }
+
+
 
   fieldset= f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)
 
