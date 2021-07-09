@@ -20,4 +20,5 @@ staging:
 production:
   clients:
     default:
+      database: cpd_iap_prod
       uri: <%= ENV['MONGODB_URI'] %>
