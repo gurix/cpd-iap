@@ -74,7 +74,7 @@ hr
       p= t('.achieved_goals_info')
       p
         ul
-        - Survey::CounselorRating.goals(@client.id).each do |goal|
+        - Survey::CounselorRating.goals(@client.id)&.each do |goal|
           -if goal.present?
             li= goal
 
