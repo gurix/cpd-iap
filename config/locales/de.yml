@@ -118,11 +118,21 @@ de:
         ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
       session_rating_scale:
+        achieved_goals_info: Sie haben zusammen mit Ihrem Berater/in folgende Ziele festgelegt
+        goals_achieved: Inwieweit haben Sie diese Ziele in der Zwischenzeit erreicht?
         title: Bitte bewerten Sie die heutige Sitzung
         save: Abschliessen
         slider_infos: Im Folgenden können Sie die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
         dimensions: *SRS_DIMENSIONS
         consultation_date: Beratungsdatum
+        last_session: Dies ist mein letzter Beratungstermin
+        achieved_goals_answers:
+          not_achieved: Nicht erreicht / keine Veränderung
+          hardly_achieved: Kaum erreicht
+          partially_achieved: Teilweise erreicht
+          mostly_achieved: Mehrheitlich erreicht
+          fully_achieved: Vollständig erreicht
+          goals_not_relevant: Ziel ist nicht mehr relevant
         relationship:
           negative: Ich fühlte mich nicht gehört, verstanden und respektiert.
           positive: Ich fühlte mich gehört, verstanden und respektiert.
@@ -136,6 +146,7 @@ de:
           negative:  In der heutigen Sitzung hat etwas gefehlt.
           positive: Insgesamt gesehen war die heutige Sitzung für mich angemessen.
         comment: Was ich sonst noch sagen möchte.
+
 
       create:
         title: Bewertung gespeichert

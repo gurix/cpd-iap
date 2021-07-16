@@ -14,6 +14,8 @@ module Survey
     field :approach_or_method, type: Integer
     field :overall,            type: Integer
     field :consultation_date,  type: String
+    field :last_session,       type: Boolean
+    field :goal_achieved,      type: String
 
     validates :relationship,       presence: true
     validates :goals_and_topics,   presence: true
