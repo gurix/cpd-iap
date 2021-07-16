@@ -118,7 +118,7 @@ de:
         ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
       session_rating_scale:
-        achieved_goals_info: Sie haben zusammen mit Ihrem Berater/in folgende Ziele festgelegt
+        achieved_goals_info: "Sie haben zusammen mit Ihrem Berater/in folgende Ziele festgelegt:"
         goals_achieved: Inwieweit haben Sie diese Ziele in der Zwischenzeit erreicht?
         title: Bitte bewerten Sie die heutige Sitzung
         save: Abschliessen
