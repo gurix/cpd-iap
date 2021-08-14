@@ -60,14 +60,8 @@ hr
     hr
 
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
-  .primary-goals
-    fieldset
-      legend= t('.goals_info')
-      = f.input :goal_1, as: :text
-      = f.input :goal_2, as: :text
-      = f.input :goal_3, as: :text
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
-  = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)
+  = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date), html5: true
   fieldset
     = f.input :last_session, as: :boolean
     .last-session-info
@@ -92,6 +86,12 @@ hr
     .cancellation-info
       = f.input :cancellation_reason, as: :text
 
+  .primary-goals
+    fieldset
+      legend= t('.goals_info')
+      = f.input :goal_1, as: :text
+      = f.input :goal_2, as: :text
+      = f.input :goal_3, as: :text
 
   fieldset
     legend = t('.crq_title')
