@@ -63,7 +63,7 @@ hr
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
   = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date), html5: true
   fieldset
-    = f.input :last_session, as: :boolean
+    = f.input :last_session, as: :boolean, wrapper_html: { class: 'no-margin-bottom' }
     .last-session-info
       p= t('.achieved_goals_info')
       p
@@ -79,10 +79,11 @@ hr
 
 
 
-  fieldset= f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)
+  fieldset
+    .no-margin-bottom= f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session), wrapper_html: { class: 'no-margin-bottom' }
 
   fieldset
-    p= f.input :cancelled_session, as: :boolean
+    p= f.input :cancelled_session, as: :boolean, wrapper_html: { class: 'no-margin-bottom' }
     .cancellation-info
       = f.input :cancellation_reason, as: :text
 
@@ -98,7 +99,7 @@ hr
     = f.input :crq_knowledge_and_skills, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
     = f.input :crq_motivation, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
     = f.input :crq_environment, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
-    = f.input :crq_activity, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
+    = f.input :crq_activity, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first, wrapper_html: { class: 'no-margin-bottom' }
 
   fieldset
     legend = t('.intervention_contents_title')
@@ -109,7 +110,7 @@ hr
           = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
           = "#{v}"
           - if t('.intervention_contents.coaching').values.last == v
-            = f.input :intervention_contents_others_qualitative, label: false
+            = f.input :intervention_contents_others_qualitative, label: false, wrapper_html: { class: 'no-margin-bottom' }
 
     fieldset
       legend Quantitativ
@@ -118,7 +119,7 @@ hr
           = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
           = "#{v}"
           - if t('.intervention_contents.coaching').values.last == v
-            = f.input :intervention_contents_others_quantiative, label: false
+            = f.input :intervention_contents_others_quantiative, label: false, wrapper_html: { class: 'no-margin-bottom' }
 
     fieldset
       legend Coaching
@@ -127,7 +128,7 @@ hr
           = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
           = "#{v}"
           - if t('.intervention_contents.coaching').values.last == v
-            = f.input :intervention_contents_others_coaching, label: false
+            = f.input :intervention_contents_others_coaching, label: false, wrapper_html: { class: 'no-margin-bottom' }
 
     = f.input :intervention_contents_others, as: :text
 
