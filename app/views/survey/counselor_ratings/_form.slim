@@ -108,12 +108,17 @@ hr
         label.check_box
           = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
           = "#{v}"
+          - if t('.intervention_contents.coaching').values.last == v
+            = f.input :intervention_contents_others_qualitative, label: false
+
     fieldset
       legend Quantitativ
       - t('.intervention_contents.quantitative').each do |k,v|
         label.check_box
           = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
           = "#{v}"
+          - if t('.intervention_contents.coaching').values.last == v
+            = f.input :intervention_contents_others_quantiative, label: false
 
     fieldset
       legend Coaching
@@ -121,6 +126,8 @@ hr
         label.check_box
           = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
           = "#{v}"
+          - if t('.intervention_contents.coaching').values.last == v
+            = f.input :intervention_contents_others_coaching, label: false
 
     = f.input :intervention_contents_others, as: :text
 

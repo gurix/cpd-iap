@@ -179,6 +179,7 @@ de:
             qual16: Begeisternde Projekte
             qual17: Meine beruflichen Werte
             qual18: Sinnerfüllung Tatjana Schnell
+            qual19: Andere, nämlich
 
           quantitative:
             quant1: N-29
@@ -191,6 +192,7 @@ de:
             quant8: KO-R
             quant9: MPZM
             quant10: Persönlichkeitsfragebogen (Big Five)
+            quant11: Andere, nämlich
 
           coaching:
             coach1: Aktivitätsplan erstellt
@@ -201,6 +203,7 @@ de:
             coach6: Kommunikation reflektiert (z.B. mit Modellen von Schultz von Thun gearbeitet)
             coach7: emotionale Unterstützung geboten
             coach8: Entscheidungsstrategien besprochen (Wie komme ich zu einer Entscheidung? Was braucht es dazu?)
+            coach9: Andere, nämlich
 
         crq_title: Wie intensiv haben Sie mit dem Klienten/der Klientin über folgende Aspekte gesprochen?
         crq_scale:

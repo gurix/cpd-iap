@@ -36,8 +36,11 @@ module Survey
       validates field_name, presence: true
     end
 
-    field :intervention_contents,        type: Array
-    field :intervention_contents_others, type: String
+    field :intervention_contents,                    type: Array
+    field :intervention_contents_others,             type: String
+    field :intervention_contents_others_qualitative, type: String
+    field :intervention_contents_others_quantiative, type: String
+    field :intervention_contents_others_coaching,    type: String
 
     # Counselor SRS
     field :counselor_relationship,        type: Integer
