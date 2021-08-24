@@ -1,13 +1,39 @@
 javascript:
+  function showHideLastSessionQuestions() {
+    $('.last-session-info').toggle($('#survey_session_rating_scale_last_session').is(':checked'));
+  }
+
   $(document).ready(function() {
+    showHideLastSessionQuestions();
+
     var slider = $('input[type="range"]');
     slider.on('click touchend mouseup', function(event) {
       $('#survey_session_rating_scale_' + this.id).val(this.value);
+    });
+
+    $('#survey_session_rating_scale_last_session').on('change', function() {
+      showHideLastSessionQuestions();
     });
   });
 
 - title(t '.title')
 .sr-only = t('.slider_infos')
+
+.row
+  fieldset
+    .col-xs-12
+      = f.input :consultation_date, as: :date, include_blank: true, label: t('.consultation_date'), html5: true
+    .col-xs-12
+      = f.input :last_session, as: :boolean, label: t('.last_session')
+    .last-session-info
+      p= t('.achieved_goals_info')
+      p
+        ul
+        - Survey::CounselorRating.goals(@client.id)&.each do |goal|
+          -if goal.present?
+            li= goal
+      = f.input :goal_achieved, as: :radio_buttons, collection: t('.achieved_goals_answers'), label_method: :second, value_method: :first, label: t('.goals_achieved')
+
 
 - %w[relationship goals_and_topics approach_or_method overall].each do |field|
   h2.caption= t(".dimensions.#{field}")

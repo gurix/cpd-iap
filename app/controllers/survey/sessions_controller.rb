@@ -19,6 +19,7 @@ module Survey
         render :create
         return
       end
+
       render :new
     end
 
@@ -47,7 +48,7 @@ module Survey
 
     def session_params
       required_param = "survey_#{type.name.demodulize.underscore}"
-      params.require(required_param).permit(:counselor_id, :relationship, :goals_and_topics, :approach_or_method, :overall)
+      params.require(required_param).permit(:counselor_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :consultation_date, :goal_achieved, :last_session)
     end
   end
 end

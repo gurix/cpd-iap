@@ -118,10 +118,21 @@ de:
         ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
       session_rating_scale:
+        achieved_goals_info: "Sie haben zusammen mit Ihrem Berater/in folgende Ziele festgelegt:"
+        goals_achieved: Inwieweit haben Sie diese Ziele in der Zwischenzeit erreicht?
         title: Bitte bewerten Sie die heutige Sitzung
         save: Abschliessen
         slider_infos: Im Folgenden können Sie die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
         dimensions: *SRS_DIMENSIONS
+        consultation_date: Beratungsdatum
+        last_session: Dies ist mein letzter Beratungstermin
+        achieved_goals_answers:
+          not_achieved: Nicht erreicht / keine Veränderung
+          hardly_achieved: Kaum erreicht
+          partially_achieved: Teilweise erreicht
+          mostly_achieved: Mehrheitlich erreicht
+          fully_achieved: Vollständig erreicht
+          goals_not_relevant: Ziel ist nicht mehr relevant
         relationship:
           negative: Ich fühlte mich nicht gehört, verstanden und respektiert.
           positive: Ich fühlte mich gehört, verstanden und respektiert.
@@ -136,6 +147,7 @@ de:
           positive: Insgesamt gesehen war die heutige Sitzung für mich angemessen.
         comment: Was ich sonst noch sagen möchte.
 
+
       create:
         title: Bewertung gespeichert
         session_suceessfully_created: Vielen Dank. Ihre Bewertung wurde erfolgreich gespeichert.
@@ -146,28 +158,52 @@ de:
       error: Die Daten konnten nicht gespeichert werden
       form:
         session_created_at: Zeitpunkt an dem die Sitzung vom Klienten bewertet wurde
-        intervention_contents_title: Welche Interventionen/Aktivitäten haben Sie in dieser Sitzung durchgeführt? (Mehrfachantworten möglich)
+        intervention_contents_title: Welche Interventionen/Aktivitäten haben Sie in dieser Sitzung durchgeführt oder besprochen? (Mehrfachantworten möglich)
         intervention_contents:
-          1: Ziel und Anliegen des Beratungstermins definiert
-          2: Mit Arbeitsheften, Tagebüchern oder Ähnlichem gearbeitet
-          3: Interessen, Werte, Fähigkeiten/Kompetenzen, Einstellungen, Persönlichkeitseigenschaften durch den Einsatz von quantitativen Verfahren (psychometrische Fragebogen/Tests) besprochen und geklärt
-          4: Interessen, Werte, Fähigkeiten/Kompetenzen, Einstellungen, Persönlichkeitseigenschaften durch den Einsatz von qualitativen Verfahren (z.B. Rey-Arbeitsprobe, Kompetenzenbilanz, RIASEC-Arbeitsblatt, ID, Berufsfotos, CCI, Entwicklungslinie...) besprochen und geklärt
-          5: Werte geklärt
-          6: Kompetenzen erarbeitet
-          7: Persönliche Leistungen und Erfolge reflektiert
-          8: Rollenmodelle/Vorbilder besprochen (z.B. Personen, die eine ähnliche Herausforderung erfolgreich bewältigt haben)
-          9: (fixe) Konzepte, Überzeugungen, Glaubenssätze, Fehlannahmen aufgedeckt, kritisch geprüft im Sinne einer kognitiven Umstrukturierung
-          10: Techniken der psychologischen Gesprächsführung eingesetzt (z.B. Skalieren, zirkuläres Fragen, Paraphrasieren, Spiegeln und Validieren von Emotionen, Konkretisieren "Was macht es aus?")
-          12: Berufs- und Aus-/Weiterbildungsinformationen Informationen vermittelt (zu Arbeitsmarkt, Berufsbildern, Studien- und Weiterbildungsgängen)
-          13: Gemeinsam Berufs- und Weiterbildungsoptionen erkundet/besprochen
-          14: Empfehlungen für Websiten oder Literatur abgegeben
-          15: Bewerbungsunterlagen und -strategien besprochen
-          16: Rollenspiele durchgeführt (z.B. Vorstellungsgespräch oder Präsentation in AC simuliert / eingeübt)
-          17: Aktivitäts- und Zeitplan für die konkreten nächsten Schritte erstellt
-          18: wahrgenommene Hindernissen identifiziert und Strategien zu deren Überwindung erarbeitet
-          19: Unterstützung durch die Umwelt / das soziale Umfeld angeregt
-          20: Hausaufgaben aufgegeben (z.B. Tagebuch führen, Auftrag zum Recherchieren zu Arbeitsmarkt, Berufsbildern/Funktionen, Arbeitgebern, Stellenangeboten, ...)
-          21: "Anderes:"
+          qualitative:
+            qual1: CCI (alle 6 Fragen)
+            qual2: My Career Story (online)
+            qual3: Career Writing ausserhalb der Beratung
+            qual4: Career Writing in der Beratung
+            qual5: Identitätskarte
+            qual6: Entwicklungslinie
+            qual7: Ressourcenbilder
+            qual8: Bilder zur Laufbahngestaltung
+            qual9: Selbsteinschätzung RIASEC
+            qual10: Fremdeinschätzungen RIASEC
+            qual11: Fremdeinschätzung Stärken/Eigenschaften
+            qual12: Vision und Umsetzung ("Stairway to Heaven") eingesetzt
+            qual13: Kompetenzenbilanz (nach von Triebel)
+            qual14: "Inserate sammeln"
+            qual15: Informative Interviews
+            qual16: Begeisternde Projekte
+            qual17: Meine beruflichen Werte
+            qual18: Sinnerfüllung Tatjana Schnell
+            qual19: Andere, nämlich
+
+          quantitative:
+            quant1: N-29
+            quant2: BFT22-E
+            quant3: Explorix / ORVIS
+            quant4: IMBES
+            quant5: KV-IT
+            quant6: SIT 2/3
+            quant7: Leistungs-/Intelligenztest
+            quant8: KO-R
+            quant9: MPZM
+            quant10: Persönlichkeitsfragebogen (Big Five)
+            quant11: Andere, nämlich
+
+          coaching:
+            coach1: Aktivitätsplan erstellt
+            coach2: Bewerbungscheck / -training durchgeführt
+            coach3: dysfunktionale Überzeugungen / Glaubenssätze identifiziert
+            coach4: Hürden beim Verfolgen der Laufbahnziele
+            coach5: Strategien im Umgang damit besprochen
+            coach6: Kommunikation reflektiert (z.B. mit Modellen von Schultz von Thun gearbeitet)
+            coach7: emotionale Unterstützung geboten
+            coach8: Entscheidungsstrategien besprochen (Wie komme ich zu einer Entscheidung? Was braucht es dazu?)
+            coach9: Andere, nämlich
 
         crq_title: Wie intensiv haben Sie mit dem Klienten/der Klientin über folgende Aspekte gesprochen?
         crq_scale:
@@ -194,6 +230,23 @@ de:
           negative: In der heutigen Sitzung hat etwas gefehlt.
 
         srs_title: Bitte bewerten Sie die heutige Sitzung.
+        goals_info: Welches sind die drei Hauptziele, welche in der Beratung verfolgt werden?
+        personal_info: Persönliche Angaben
+        achieved_goals_info: Sie haben zusammen mit Ihrer Klientin/Ihrem Klienten folgende Ziele festgelegt.
+
+        type_of_counseling:
+          iv: Im Auftrag der IV
+          company_organisation: Im Auftrag eines Unternehmens / einer Organisation
+          self_paying: Selbstzahler:in
+
+        yes_no:
+          yes: Ja
+          no: Nein
+
+      gender:
+        male: männlich
+        female: weiblich
+        other: andere
 
   mongoid:
      attributes:
@@ -240,3 +293,16 @@ de:
           counselor_goals_and_topics: SRS Beratungsperson Ziele und Themen
           counselor_approach_or_method: SRS Beratungsperson Herangehensweise
           counselor_overall: SRS Beratungsperson Insgesamt
+          consultation_code: Bitte geben Sie Ihren Beratungscode ein
+          years_of_experience: Über wie viele Jahre Erfahrung verfügen Sie in der Laufbahnberatung?
+          age: Bitte geben Sie Ihr Alter an
+          gender: Bitte geben Sie Ihr Geschlecht an
+          goal_1: Erstes Ziel
+          goal_2: Zweites Ziel
+          goal_3: Drittes Ziel
+          last_session: Letzter Termin?
+          cancelled_session: Beratung wurde abgebrochen
+          cancellation_reason: Grund des Abbruchs?
+          goals_achieved: Inwieweit schätzen Sie ein, dass diese Ziele in der Zwischenzeit erreicht wurden?
+          change_of_counselor: Hat im Laufe des Beratungsprozesses ein Berater:innenwechsel stattgefunden?
+          type_of_counseling: Um welche Form der Laufbahnberatung handelt es sich?

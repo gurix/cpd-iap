@@ -4,7 +4,7 @@ feature 'counselor rating input' do
   scenario 'a counselor is asked to rate a given session' do
     counselor = create(:counselor)
     client = create :client, counselor: counselor
-    session = create :session_rating_scale, client: client, counselor: counselor
+    session = create :session_rating_scale, client: client, counselor: counselor, consultation_date: Time.zone.now
 
     visit new_client_survey_session_rating_scale_counselor_rating_url(session.client, session)
 
@@ -16,16 +16,13 @@ feature 'counselor rating input' do
     choose 'survey_counselor_rating_crq_environment_2'
     choose 'survey_counselor_rating_crq_activity_4'
 
-    check 'Gemeinsam Berufs- und Weiterbildungsoptionen erkundet/besprochen'
-    check 'Unterstützung durch die Umwelt / das soziale Umfeld angeregt'
+    check 'Ressourcenbilder'
+    check 'KV-IT'
+    check 'emotionale Unterstützung geboten'
 
     fill_in 'Andere Interventionen/Aktivitäten', with: 'Ein Bier zusammen getrunken.'
 
-    select '7', from: 'survey_counselor_rating_session_date_3i'
-    select 'März', from: 'survey_counselor_rating_session_date_2i'
-    select '2017', from: 'survey_counselor_rating_session_date_1i'
-    select '22', from: 'survey_counselor_rating_session_date_4i'
-    select '11', from: 'survey_counselor_rating_session_date_5i'
+    fill_in 'Zeitpunkt an dem die Sitzung stattgefunden hat', with: '24.08.2021'
 
     find("input[id$='survey_counselor_rating_counselor_relationship']").set 10
     find("input[id$='survey_counselor_rating_counselor_goals_and_topics']").set 20
@@ -42,7 +39,7 @@ feature 'counselor rating input' do
 
     expect(counselor_rating.session_number).to eq 3
     expect(counselor_rating.session_duration).to eq 60
-    expect(counselor_rating.session_date).to eq '2017-03-07 22:11:00.000000000 +0000'
+    expect(counselor_rating.session_date).to eq 'Tue, 24 Aug 2021 00:00:00 UTC +00:00'
     expect(counselor_rating.online_session).to eq true
 
     expect(counselor_rating.crq_knowledge_and_skills).to eq 0
@@ -55,6 +52,6 @@ feature 'counselor rating input' do
     expect(counselor_rating.counselor_approach_or_method).to eq 30
     expect(counselor_rating.counselor_overall).to eq 40
 
-    expect(counselor_rating.intervention_contents).to eq %w[13 19]
+    expect(counselor_rating.intervention_contents).to eq %w[qual7 quant5 coach7]
   end
 end

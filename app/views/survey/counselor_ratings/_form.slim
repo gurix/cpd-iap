@@ -1,3 +1,40 @@
+javascript:
+  function showHidePrimaryGoals() {
+    if ($('#survey_counselor_rating_session_number').val() == 1) {
+      $('.primary-goals').show();
+    } else {
+      $('.primary-goals').hide();
+    };
+  }
+
+  function showHideLastSessionQuestions() {
+    $('.last-session-info').toggle($('#survey_counselor_rating_last_session').is(':checked'));
+  }
+
+  function showHideCancellationReasion() {
+    $('.cancellation-info').toggle($('#survey_counselor_rating_cancelled_session').is(':checked'));
+  }
+
+  $(document).ready(function() {
+    // Initial state
+    showHidePrimaryGoals();
+    showHideCancellationReasion();
+    showHideLastSessionQuestions();
+
+    $('#survey_counselor_rating_session_number').on('change', function() {
+      showHidePrimaryGoals();
+    });
+
+    $('#survey_counselor_rating_last_session').on('change', function() {
+      showHideLastSessionQuestions();
+    });
+
+    $('#survey_counselor_rating_cancelled_session').on('change', function() {
+      showHideCancellationReasion();
+    });
+  });
+
+
 h1.hidden = title "Bewertung der Sitzung mit #{@client.name} (#{@client.identifier}) vom #{l(@session.created_at, format: :short)}"
 
 dl
@@ -9,24 +46,90 @@ dl
 
 hr
 
+
 = simple_form_for(@counselor_rating, url: client_survey_session_rating_scale_counselor_rating_path) do |f|
+  = f.input :client_id, as: :hidden
+  - if @counselor_rating.first_session?(@client)
+    fieldset
+      legend= t('.personal_info')
+      = f.input :consultation_code, as: :string
+      = f.input :years_of_experience, as: :integer
+      = f.input :age, as: :integer
+      = f.input :gender, collection: Survey::CounselorRating.gender_options
+
+    hr
+
   = f.input :session_number, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_number)
   = f.input :session_duration, as: :integer, label: Survey::CounselorRating.human_attribute_name(:session_duration)
-  = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date)
-  = f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session)
+  = f.input :session_date, as: :datetime, label: Survey::CounselorRating.human_attribute_name(:session_date), html5: true
+  fieldset
+    = f.input :last_session, as: :boolean, wrapper_html: { class: 'no-margin-bottom' }
+    .last-session-info
+      p= t('.achieved_goals_info')
+      p
+        ul
+        - Survey::CounselorRating.goals(@client.id)&.each do |goal|
+          -if goal.present?
+            li= goal
+
+      p= f.input :goals_achieved, as: :radio_buttons, collection: t('survey.sessions.session_rating_scale.achieved_goals_answers'), label_method: :second, value_method: :first
+      fieldset
+        p= f.input :type_of_counseling, collection: t('.type_of_counseling').map{ |k,v| [v, k] }
+        p= f.input :change_of_counselor, collection: t('.yes_no').map{ |k,v| [v, k] }
+
+
+
+  fieldset
+    .no-margin-bottom= f.input :online_session, as: :boolean, label: Survey::CounselorRating.human_attribute_name(:online_session), wrapper_html: { class: 'no-margin-bottom' }
+
+  fieldset
+    p= f.input :cancelled_session, as: :boolean, wrapper_html: { class: 'no-margin-bottom' }
+    .cancellation-info
+      = f.input :cancellation_reason, as: :text
+
+  .primary-goals
+    fieldset
+      legend= t('.goals_info')
+      = f.input :goal_1, as: :text
+      = f.input :goal_2, as: :text
+      = f.input :goal_3, as: :text
+
   fieldset
     legend = t('.crq_title')
     = f.input :crq_knowledge_and_skills, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
     = f.input :crq_motivation, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
     = f.input :crq_environment, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
-    = f.input :crq_activity, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first
+    = f.input :crq_activity, as: :radio_buttons, collection: t('.crq_scale'), label_method: :second, value_method: :first, wrapper_html: { class: 'no-margin-bottom' }
 
   fieldset
     legend = t('.intervention_contents_title')
-    - t('.intervention_contents').each do |k,v|
-      label.check_box
-        = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
-        = "#{k}: #{v}"
+    fieldset
+      legend Qualitativ
+      - t('.intervention_contents.qualitative').each do |k,v|
+        label.check_box
+          = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
+          = "#{v}"
+          - if t('.intervention_contents.coaching').values.last == v
+            = f.input :intervention_contents_others_qualitative, label: false, wrapper_html: { class: 'no-margin-bottom' }
+
+    fieldset
+      legend Quantitativ
+      - t('.intervention_contents.quantitative').each do |k,v|
+        label.check_box
+          = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
+          = "#{v}"
+          - if t('.intervention_contents.coaching').values.last == v
+            = f.input :intervention_contents_others_quantiative, label: false, wrapper_html: { class: 'no-margin-bottom' }
+
+    fieldset
+      legend Coaching
+      - t('.intervention_contents.coaching').each do |k,v|
+        label.check_box
+          = check_box :survey_counselor_rating, :intervention_contents, { multiple: true, checked: "#{'checked' if @counselor_rating.intervention_contents&.include?(k.to_s)}" }, k, nil
+          = "#{v}"
+          - if t('.intervention_contents.coaching').values.last == v
+            = f.input :intervention_contents_others_coaching, label: false, wrapper_html: { class: 'no-margin-bottom' }
+
     = f.input :intervention_contents_others, as: :text
 
   fieldset

@@ -84,12 +84,14 @@ group :development, :test do
 
   # Acceptance test framework for web applications
   gem 'capybara'
+  gem 'capybara-screenshot'
 
   # RSpec::CollectionMatchers lets you express expected outcomes on collections of an object in an example
   gem 'rspec-collection_matchers'
 
-  # A PhantomJS driver for Capybara
-  gem 'poltergeist'
+  # A javascript driver for Capybara
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 
   # Helper class for launching cross-platform applications in a fire and forget manner.
   gem 'launchy'

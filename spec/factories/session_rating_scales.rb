@@ -4,5 +4,6 @@ FactoryBot.define do
     goals_and_topics { (0..100).to_a.sample }
     approach_or_method { (0..100).to_a.sample }
     overall { (0..100).to_a.sample }
+    consultation_date { Time.zone.now }
   end
 end
