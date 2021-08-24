@@ -19,6 +19,7 @@ module Survey
         render :create
         return
       end
+
       render :new
     end
 

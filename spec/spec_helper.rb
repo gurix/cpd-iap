@@ -2,12 +2,12 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 
 require 'rspec/rails'
+require 'capybara-screenshot/rspec'
 require 'rails/mongoid'
 require 'mongoid-rspec'
 require 'factory_bot'
 require 'faker'
 require 'capybara/rspec'
-require 'capybara/poltergeist'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -24,7 +24,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Rails.application.routes.url_helpers
 
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :selenium_chrome_headless
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

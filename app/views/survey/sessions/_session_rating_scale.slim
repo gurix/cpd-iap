@@ -22,10 +22,7 @@ javascript:
 .row
   fieldset
     .col-xs-12
-      label= t('.consultation_date')
-      = f.date_field :consultation_date, include_blank: true, label: t('.consultation_date')
-      .form-group class="#{'has-error' unless f.object.errors['consultation_date'].blank?}"
-        span.help-block= f.object.errors['consultation_date'].first
+      = f.input :consultation_date, as: :date, include_blank: true, label: t('.consultation_date'), html5: true
     .col-xs-12
       = f.input :last_session, as: :boolean, label: t('.last_session')
     .last-session-info
