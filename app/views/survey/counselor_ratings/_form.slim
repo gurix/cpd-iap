@@ -72,7 +72,7 @@ hr
           -if goal.present?
             li= goal
 
-      p= f.input :goals_achieved, as: :text
+      p= f.input :goals_achieved, as: :radio_buttons, collection: t('survey.sessions.session_rating_scale.achieved_goals_answers'), label_method: :second, value_method: :first
       fieldset
         p= f.input :type_of_counseling, collection: t('.type_of_counseling').map{ |k,v| [v, k] }
         p= f.input :change_of_counselor, collection: t('.yes_no').map{ |k,v| [v, k] }
