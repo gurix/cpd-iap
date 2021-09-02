@@ -85,14 +85,14 @@ Rails.application.configure do
   config.roadie.url_options = config.action_mailer.default_url_options
 
   config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   port:                ENV['SMTP_PORT'],
-  #   address:             ENV['SMTP_HOST'],
-  #   user_name:           ENV['SMTP_USER'],
-  #   password:            ENV['SMTP_PASSWORD'],
-  #   domain:              ENV['SMTP_DOMAIN'],
-  #   authentication:      :plain,
-  #   enable_starttls_auto: true
-  # }
+  config.action_mailer.smtp_settings = {
+    port:                ENV['SMTP_PORT'],
+    address:             ENV['SMTP_HOST'],
+    user_name:           ENV['SMTP_USER'],
+    password:            ENV['SMTP_PASSWORD'],
+    domain:              ENV['SMTP_DOMAIN'],
+    authentication:      :plain,
+    enable_starttls_auto: true
+  }
 end
 
