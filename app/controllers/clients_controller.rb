@@ -10,9 +10,9 @@ class ClientsController < ApplicationController
 
   def index
     sessions =
-      if params[:from_date] && params[:to_date]
+      if params[:from_date].present? && params[:to_date].present?
         Survey::Session.where(created_at: Time.zone.parse(params[:from_date]).beginning_of_day..Time.zone.parse(params[:to_date]).end_of_day)
-      elsif params[:from_date]
+      elsif params[:from_date].present?
         Survey::Session.where(created_at: Time.zone.parse(params[:from_date]).beginning_of_day..Time.zone.now.end_of_day)
       else
         Survey::Session.all
