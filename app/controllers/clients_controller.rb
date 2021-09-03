@@ -9,13 +9,22 @@ class ClientsController < ApplicationController
   before_action :load_client, only: %i[edit update]
 
   def index
-    csv_header
-    Client.each do |client|
-      client.sessions.each do |session|
-        next if session.counselor.blank?
-
-        response.stream.write CSV.generate_line(client.cols + session.cols + counselor_rating(session) + counselor_rating_intervention_contents(session))
+    sessions =
+      if params[:from_date] && params[:to_date]
+        Survey::Session.where(created_at: Time.zone.parse(params[:from_date]).beginning_of_day..Time.zone.parse(params[:to_date]).end_of_day)
+      elsif params[:from_date]
+        Survey::Session.where(created_at: Time.zone.parse(params[:from_date]).beginning_of_day..Time.zone.now.end_of_day)
+      else
+        Survey::Session.all
       end
+
+    csv_header
+    sessions.each do |session|
+      next if session.counselor.blank?
+
+      client = Client.find(id: session.client_id)
+
+      response.stream.write CSV.generate_line(client.cols + session.cols + counselor_rating(session) + counselor_rating_intervention_contents(session))
     end
   ensure
     response.stream.close
@@ -37,13 +46,16 @@ class ClientsController < ApplicationController
 
   def update
     redirect_to(new_client_session_path) && return if @client.update_attributes(client_params)
+
     render :edit
   end
 
   def create
     redirect_to(new_client_session_path) && return if @client.persisted? # The client already exists we can proceed directly
+
     @client.assign_attributes(client_params)
     redirect_to(new_client_session_path) && return if @client.second_step && @client.save
+
     @title = t('.title', identifier: @client.identifier)
     render :new
   end
