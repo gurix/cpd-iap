@@ -75,9 +75,9 @@ module Survey
 
     def intervention_contents_cols
       [
-        intervention_contents.reject { |x| x unless x.starts_with?('qual') },
-        intervention_contents.reject { |x| x unless x.starts_with?('quant') },
-        intervention_contents.reject { |x| x unless x.starts_with?('coach') }
+        intervention_contents&.reject { |x| x unless x.starts_with?('qual') },
+        intervention_contents&.reject { |x| x unless x.starts_with?('quant') },
+        intervention_contents&.reject { |x| x unless x.starts_with?('coach') }
       ]
     end
 
