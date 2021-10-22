@@ -69,10 +69,16 @@ module Survey
       validates field_name, presence: true
     end
 
+    def self.intervention_contents_columns
+      %i[qualitative quantitative coaching]
+    end
+
     def intervention_contents_cols
-      self.class.intervention_contents_fields.keys.map do |key|
-        intervention_contents&.include? key.to_s
-      end
+      [
+        intervention_contents.reject { |x| x unless x.starts_with?('qual') },
+        intervention_contents.reject { |x| x unless x.starts_with?('quant') },
+        intervention_contents.reject { |x| x unless x.starts_with?('coach') }
+      ]
     end
 
     def first_session?(client)

@@ -100,6 +100,6 @@ class ClientsController < ApplicationController
     response.headers['Content-Type'] = 'text/csv'
     response.stream.write CSV.generate_line(Client.colnames + Survey::SessionRatingScale.colnames +
     Survey::CounselorRating.colnames(['intervention_contents']) +
-    Survey::CounselorRating.intervention_contents_fields.values)
+    Survey::CounselorRating.intervention_contents_columns)
   end
 end
